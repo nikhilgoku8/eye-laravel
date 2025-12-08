@@ -5,31 +5,35 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\BlogCategory;
+use App\Models\Doctor;
+use App\Models\Specialization;
 
-class BlogCategoryController extends Controller
+class DoctorController extends Controller
 {
     public function index()
     {
-        $data['result'] = BlogCategory::orderBy('sort_order')->paginate(100);
-        return view('admin.blogs-categories.index', $data);
+        $data['result'] = Doctor::paginate(100);
+        return view('admin.doctors.index', $data);
     }
 
     public function create()
     {
-        return view('admin.blogs-categories.create');
+        $data['specializations'] = Specialization::all();
+        return view('admin.doctors.create', $data);
     }
 
-    public function show(BlogCategory $blogs_category)
+    public function show(Doctor $doctor)
     {
-        $data['result'] = $blogs_category;
-        return view('admin.blogs-categories.show', $data);
+        $data['result'] = $doctor;
+        $data['specializations'] = Specialization::all();
+        return view('admin.doctors.show', $data);
     }
 
-    public function edit(BlogCategory $blogs_category)
+    public function edit(Doctor $doctor)
     {
-        $data['result'] = $blogs_category;
-        return view('admin.blogs-categories.edit', $data);
+        $data['result'] = $doctor;
+        $data['specializations'] = Specialization::all();
+        return view('admin.doctors.edit', $data);
     }
 
     public function string_filter($string){
@@ -39,34 +43,38 @@ class BlogCategoryController extends Controller
 
     public function store(Request $request)
     {
-        return $this->handleBlogCategoryRequest($request, new BlogCategory(), true);
+        return $this->handleDoctorRequest($request, new Doctor(), true);
     }
 
-    public function update(Request $request, BlogCategory $blogs_category)
+    public function update(Request $request, Doctor $doctor)
     {
 
-        return $this->handleBlogCategoryRequest($request, $blogs_category, false);
+        return $this->handleDoctorRequest($request, $doctor, false);
 
     }
 
-    private function handleBlogCategoryRequest(Request $request, BlogCategory $blogs_category, bool $isNew)
+    private function handleDoctorRequest(Request $request, Doctor $doctor, bool $isNew)
     {
 
         $dataID = $request->input('dataID');
 
         try {
             $validated = $request->validate([
-                'title' => 'required|string|max:255|unique:blogs_categories,title,'. $dataID,
-                'sort_order' => 'required|numeric|min:0',
+                'name' => 'required|string|max:255|unique:doctors,name,'. $dataID,
+                'specializations' => $isNew ? 'nullable|array' : 'required|array|min:1',
+                'specializations.*' => $isNew ? 'nullable|bail|exists:specializations,id' : 'required|exists:specializations,id',
+                'is_active' => 'required|boolean',
             ]);
-
-            $validated['slug'] = $this->string_filter($validated['title']);
 
             // Directly handle the save/update logic here
             if ($isNew) {
-                $blogs_category = BlogCategory::create($validated);
+                $doctor = Doctor::create($validated);
             } else {
-                $blogs_category->update($validated);
+                $doctor->update($validated);
+            }
+
+            if(!empty($request->specializations)){
+                $doctor->specializations()->sync($request->specializations ?? []);
             }
 
             session()->flash('success', $isNew ? 'Category created successfully!' : 'Category updated successfully!');
@@ -92,17 +100,17 @@ class BlogCategoryController extends Controller
         }
     }
 
-    public function destroy(BlogCategory $blogs_category)
+    public function destroy(Doctor $doctor)
     {
-        $blogs_category->delete();
-        return redirect()->route('admin.blogs-categories.index')->with('success', 'Category deleted!');
+        $doctor->delete();
+        return redirect()->route('admin.doctors.index')->with('success', 'Category deleted!');
     }
 
     public function bulkDelete(Request $request)
     {
         // $dataIDs = $request->input('dataID');
 
-        BlogCategory::destroy($request->dataID);
+        Doctor::destroy($request->dataID);
 
         return response()->json(['success' => true, 'message' => 'Record Deleted']);
     }

@@ -7,8 +7,8 @@
                 <div class="left_section">
                     <h1 class="">Change Password</h1>
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('wm/dashboard'); }}">Home</a></li>
-                        <li><a href="{{ url('wm/change-password'); }}">Change Password</a></li>
+                        <li><a href="{{ route('admin.dashboard') }}">Home</a></li>
+                        <li><a href="{{ route('admin.change-password') }}">Change Password</a></li>
                     </ul>    
                 </div>
             </div>                    
@@ -93,7 +93,7 @@ $(document).ready(function() {
 
 	    $.ajax({
 	        type: "POST",
-	        url: "{{ url('wm/changePasswordFunction') }}",
+	        url: "{{ route('admin.changePasswordFunction') }}",
 	        data:  new FormData(this),
 	        dataType: 'json',
 	        cache: false,

@@ -4,7 +4,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>MINTIT Admin</title>
+<title>{{ config('app.name') }} Admin</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="{{ asset('admin/assets/css/bootstrap.min.css') }}" rel="stylesheet">

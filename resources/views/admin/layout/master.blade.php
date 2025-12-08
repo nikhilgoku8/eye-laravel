@@ -21,7 +21,7 @@
                 <div class="last_row">
                     
                     <div class="left_section">
-                        All Rights Reserved @ <b>MINTIT</b>.
+                        All Rights Reserved @ <b>{{ config('app.name') }}</b>.
                     </div>
                     <div class="right_section">
                         <!-- <div class="text">D’zine and Developed by <br> <b>Codzera Technologies Private Limited.</b> </div>

@@ -7,19 +7,19 @@
                 <div class="left_section">
                     <h1 class="">Blog Posts</h1>
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('wm/dashboard'); }}">Home</a></li>
-                        <li><a href="{{ url('wm/blog-posts'); }}">Blog Posts</a></li>
+                        <li><a href="{{ route('admin.dashboard') }}">Home</a></li>
+                        <li><a href="{{ route('admin.blog-posts.index') }}">Blog Posts</a></li>
                     </ul>    
                 </div>
                 
                 <div class="right_section">
                     <div class="purple_hollow_btn">
-                        <a href="{{ url('wm/blog-posts/create'); }}">Add New</a>
+                        <a href="{{ route('admin.blog-posts.create') }}">Add New</a>
                     </div>
-                    <!-- <div class="orange_hollow_btn">
+                    <div class="orange_hollow_btn">
                         <a id="filter_option">Filter</a>
                     </div>
-                    <div class="blue_filled_btn">
+                    <!-- <div class="blue_filled_btn">
                         <a id="export_option">Export</a>
                     </div> -->
                 </div>
@@ -28,6 +28,8 @@
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
+
+    @include('admin.blog-posts.filter')
 
     <div class="row">
         <div class="fourth_row">
@@ -57,11 +59,9 @@
                     <table>
                         <tbody>
                             <tr>
-                                <th class="col-sm-2">Blog Title</th>
+                                <th class="col-sm-4">Blog Title</th>
                                 <th class="col-sm-2">Image</th>
                                 <th class="col-sm-2">Category</th>
-                                <th class="col-sm-1">Handpicked</th>
-                                <th class="col-sm-1">Views</th>
                                 <th class="col-sm-1">Blog Date</th>
                                 <th class="col-sm-1">Updated at</th>
                                 <th class="col-sm-2 center">ACTION</th>
@@ -70,16 +70,14 @@
                             @foreach ($result as $row)
                             <tr>
                                 <td>{{ $row->title }}</td>
-                                <td><a href="{{ asset('uploads/blog-posts/'.$row->image_file) }}" target="_blank"><img src="{{ asset('uploads/blog-posts/'.$row->image_file) }}" style="width:100%;"></a></td>
+                                <td><a href="{{ asset('uploads/blogs/'.$row->image_file) }}" target="_blank"><img src="{{ asset('uploads/blogs/'.$row->image_file) }}" style="width:100%;"></a></td>
                                 <td>
-                                    @if(!empty($blogsCategories))
-                                        @foreach($blogsCategories as $category)
-                                            @if( $category->id == $row->category_id) {{ $category->category_name }} @endif
+                                    @if(!empty($categories))
+                                        @foreach($categories as $category)
+                                            @if( $category->id == $row->category_id) {{ $category->title }} @endif
                                         @endforeach 
                                     @endif
                                 </td>
-                                <td>{{ $row->handpick }}</td>
-                                <td>{{ $row->views }}</td>
                                 <td>{{ $row->blog_date }}</td>
                                 <td>
                                     @if(!empty($row->updated_at))
@@ -87,7 +85,7 @@
                                     @endif
                                 </td>
                                 <td class="center">
-                                    <a href="{{ url('wm/blog-posts/edit/'.$row->id) }}" class="edit_details">Edit</a>
+                                    <a href="{{ route('admin.blog-posts.edit', $row->id) }}" class="edit_details">Edit</a>
                                     <!-- <br> -->
                                     <span class="checkbox">
                                         <input name="dataID" class="styled" type="checkbox" value="{{ $row->id }}">
@@ -133,7 +131,7 @@ $(document).ready(function() {
         if (confirm('Are you sure you want to delete these?')) {
             $.ajax({
                 type: "POST",
-                url: '<?php echo URL::to('/'); ?>/wm/blog-posts/delete',
+                url: "{{ route('admin.blog-posts.bulk-delete') }}",
                 data: {"_token":"{{ csrf_token() }}", "dataID":dataID},
                 dataType: 'json',
                 success: function(response) {

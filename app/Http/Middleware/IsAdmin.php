@@ -17,7 +17,7 @@ class IsAdmin
     {
 
         if ($request->session()->get('isAdmin') != 'yes') {
-            return redirect('wm/login');
+            return redirect()->route('admin.login');
         }
         
         return $next($request);

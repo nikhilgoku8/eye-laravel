@@ -1,0 +1,100 @@
+php artisan migrate:refresh --path=/database/migrations/2025_12_08_092543_create_appointments_table.php
+
+$('#appointment_date').on('change', function() {
+    let date = $(this).val();
+    let doctorId = $('#doctor_id').val();
+
+    $.ajax({
+        url: '/doctor-slots',
+        type: 'GET',
+        data: { doctor_id: doctorId, date: date },
+        success: function(res) {
+            let dropdown = $('#time_slot');
+            dropdown.empty();
+            dropdown.append('<option value="">Select a time slot</option>');
+
+            res.slots.forEach(slot => {
+                if (!slot.is_booked) {
+                    dropdown.append(`
+                        <option value="${slot.id}">
+                            ${slot.start_time} - ${slot.end_time}
+                        </option>
+                    `);
+                }
+            });
+        }
+    });
+});
+
+public function bookAppointment(Request $request)
+{
+    $request->validate([
+        'patient_name'  => 'required|string|max:150',
+        'patient_email' => 'required|email|max:150',
+        'patient_phone' => 'nullable|string|max:20',
+        'doctor_id'     => 'required|exists:doctors,id',
+        'slot_id'       => 'required|exists:time_slots,id',
+        'appointment_date' => 'required|date|after_or_equal:today',
+    ]);
+
+    // Check if doctor already booked for the same slot & date
+    $exists = Appointment::where('doctor_id', $request->doctor_id)
+        ->where('slot_id', $request->slot_id)
+        ->where('appointment_date', $request->appointment_date)
+        ->exists();
+
+    if ($exists) {
+        return response()->json([
+            'status'  => 'error',
+            'message' => 'This time slot is already booked for this doctor.'
+        ], 409);
+    }
+
+    // Create appointment
+    $appointment = Appointment::create([
+        'patient_name'     => $request->patient_name,
+        'patient_email'    => $request->patient_email,
+        'patient_phone'    => $request->patient_phone,
+        'doctor_id'        => $request->doctor_id,
+        'slot_id'          => $request->slot_id,
+        'appointment_date' => $request->appointment_date,
+        'status'           => 'confirmed'
+    ]);
+
+    return response()->json([
+        'status'  => 'success',
+        'message' => 'Appointment booked successfully.',
+        'data'    => $appointment
+    ]);
+}
+
+
+public function getDoctorSlots(Request $request)
+{
+    $request->validate([
+        'doctor_id' => 'required|exists:doctors,id',
+        'date'      => 'required|date|after_or_equal:today'
+    ]);
+
+    // All global time slots
+    $timeSlots = TimeSlot::orderBy('start_time')->get();
+
+    // Booked slots for this doctor on that date
+    $booked = Appointment::where('doctor_id', $request->doctor_id)
+        ->where('appointment_date', $request->date)
+        ->pluck('slot_id')
+        ->toArray();
+
+    // Mark availability inside collection
+    $slots = $timeSlots->map(function ($slot) use ($booked) {
+        $slot->is_booked = in_array($slot->id, $booked);
+        return $slot;
+    });
+
+    return response()->json([
+        'status' => 'success',
+        'slots'  => $slots
+    ]);
+}
+
+

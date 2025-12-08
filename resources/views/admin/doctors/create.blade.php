@@ -6,10 +6,10 @@
         <div class="col-lg-12">
             <div class="page-header my_style">
                 <div class="left_section">
-                    <h1 class="">Add New Blog Category</h1>
+                    <h1 class="">Add New Doctor</h1>
                     <ul class="breadcrumb">
                         <li><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                        <li><a href="{{ route('admin.blogs-categories.index') }}">Blogs Categories</a></li>
+                        <li><a href="{{ route('admin.doctors.index') }}">Doctors</a></li>
                     </ul>    
                 </div>
                 
@@ -41,7 +41,7 @@
                     <div class="left_section">
                         <div class="title_text">
                             <div class="title">Please fillup the form </div>
-                            <!-- <div class="sub_title">Add New blogs-categories</div> -->
+                            <!-- <div class="sub_title">Add New doctors</div> -->
                         </div>
                     </div>
                     <div class="right_section">
@@ -55,16 +55,34 @@
                     <div class="input_boxes">
                         <div class="col-sm-12">
                             <div class="input_box">
-                                <label>Category Name</label>
-                                <div class="error form_error" id="form-error-title"></div>
-                                <input type="text" name="title" placeholder="Category Name*">
+                                <label>Specializations</label>
+                                <div class="error form_error" id="form-error-specializations"></div>
+                                <select name="specializations[]" multiple>
+                                    <option value="">Select Specializations</option>
+                                    @if(!empty($specializations))
+                                        @foreach($specializations as $row)
+                                            <option value="{{ $row->id }}">{{ $row->title }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="input_box">
-                                <label>Sort Order</label>
-                                <div class="error form_error" id="form-error-sort_order"></div>
-                                <input type="number" name="sort_order" min="0">
+                                <label>Doctor Name</label>
+                                <div class="error form_error" id="form-error-name"></div>
+                                <input type="text" name="name" placeholder="Doctor Name*">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="input_box">
+                                <label>Status</label>
+                                <div class="error form_error" id="form-error-is_active"></div>
+                                <select name="is_active">
+                                    <option value="">Select Status</option>
+                                    <option value="1">Active</option>
+                                    <option value="0">Inactive</option>
+                                </select>
                             </div>
                         </div>
                         <div class="clr"></div>
@@ -99,14 +117,14 @@ $(document).ready(function() {
         // if(confirm('Are you sure you want to Create Category?')){
             $.ajax({
                 type: "POST",
-                url: "{{ route('admin.blogs-categories.store') }}",
+                url: "{{ route('admin.doctors.store') }}",
                 data:  new FormData(this),
                 dataType: 'json',
                 cache: false,
                 contentType: false,
                 processData: false,
                 success: function(result) {
-                    location.href="{{ route('admin.blogs-categories.index') }}";
+                    location.href="{{ route('admin.doctors.index') }}";
                 },
                 error: function(data){
                     var responseData = data.responseJSON;        

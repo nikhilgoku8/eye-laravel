@@ -31,8 +31,8 @@
                             <ul class="dropdown-menu dropdown-user">
                                 <!-- <li><a><i class="fa fa-key fa-fw"></i> Change Password</a></li>
                                 <li class="divider"></li> -->
-                                <li><a href="{{ url('wm/change-password') }}"><i class="fa fa-key" aria-hidden="true"></i> Change Password</a></li>
-                                <li><a href="{{ url('wm/logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                                <li><a href="{{ route('admin.change-password') }}"><i class="fa fa-key" aria-hidden="true"></i> Change Password</a></li>
+                                <li><a href="{{ route('admin.logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                             </ul>
                             <!-- /.dropdown-user -->
                         </li>
@@ -66,13 +66,13 @@
                             </div> -->
                             <div>Menu</div>
                         </li>
-                        <li><a href="{{ url('wm/dashboard'); }}" class="active"><i class="fa fa-line-chart" aria-hidden="true"></i> Dashboard</a></li>
+                        <li><a href="{{ route('admin.dashboard') }}" class="active"><i class="fa fa-line-chart" aria-hidden="true"></i> Dashboard</a></li>
 
                         <li>
                             <a><i class="fa fa-list-ul" aria-hidden="true"></i> Blogs Categories<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li><a href="{{ url('wm/blogs-categories'); }}">All Categories</a></li>
-                                <li><a href="{{ url('wm/blogs-categories/create'); }}">Add New</a></li>
+                                <li><a href="{{ route('admin.blogs-categories.index') }}">All Categories</a></li>
+                                <li><a href="{{ route('admin.blogs-categories.create') }}">Add New</a></li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -80,11 +80,16 @@
                         <li>
                             <a><i class="fa fa-medkit" aria-hidden="true"></i> Blog Posts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li><a href="{{ url('wm/blog-posts'); }}">All Posts</a></li>
-                                <li><a href="{{ url('wm/blog-posts/create'); }}">Add New</a></li>
+                                <li><a href="{{ route('admin.blog-posts.index') }}">All Posts</a></li>
+                                <li><a href="{{ route('admin.blog-posts.create') }}">Add New</a></li>
                             </ul>
                             <!-- /.nav-second-level -->
-                        </li>                    
+                        </li>
+
+                        <li>
+                            <a href="{{ route('admin.specializations.index') }}"><i class="fa fa-list-ul" aria-hidden="true"></i> Specialization</a>
+                            <a href="{{ route('admin.doctors.index') }}"><i class="fa fa-list-ul" aria-hidden="true"></i> Doctors</a>
+                        </li>
                         
                         
                     </ul>

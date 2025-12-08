@@ -8,8 +8,8 @@
                 <div class="left_section">
                     <h1 class="">Add New Blog Post</h1>
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('wm/dashboard'); }}">Home</a></li>
-                        <li><a href="{{ url('wm/blog-posts'); }}">Blog Posts</a></li>
+                        <li><a href="{{ route('admin.dashboard') }}">Home</a></li>
+                        <li><a href="{{ route('admin.blog-posts.index') }}">Blog Posts</a></li>
                     </ul>    
                 </div>
                 
@@ -54,6 +54,22 @@
                     <div class="input_boxes">
                         <div class="col-sm-12">
                             <div class="input_box">
+                                <label>Blog Category</label>
+                                <div class="error form_error" id="form-error-category_id"></div>
+                                @if(!empty($categories))
+                                <select name="category_id">
+                                    <option value="">Select Category</option>                                    
+                                    @foreach($categories as $row)
+                                        <option value="{{ $row->id }}">{{ $row->title }}</option>
+                                    @endforeach                                    
+                                </select>
+                                @else
+                                    Create a Blog Category First
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="input_box">
                                 <label>Blog Title</label>
                                 <div class="error form_error" id="form-error-title"></div>
                                 <input type="text" name="title" placeholder="Blog Title*">
@@ -82,22 +98,6 @@
                         </div>
                         <div class="col-sm-12">
                             <div class="input_box">
-                                <label>Category</label>
-                                <div class="error form_error" id="form-error-category_id"></div>
-                                @if(!empty($blogsCategories))
-                                <select name="category_id">
-                                    <option value="">Select Category</option>                                    
-                                    @foreach($blogsCategories as $row)
-                                    <option value="{{ $row->id }}">{{ $row->category_name }}</option>
-                                    @endforeach                                    
-                                </select>
-                                @else
-                                Create a Blog Category First
-                                @endif
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="input_box">
                                 <label>Meta Title</label>
                                 <div class="error form_error" id="form-error-meta_title"></div>
                                 <input type="text" name="meta_title" placeholder="Meta Title*">
@@ -108,13 +108,6 @@
                                 <label>Meta Description</label>
                                 <div class="error form_error" id="form-error-meta_description"></div>
                                 <input type="text" name="meta_description" placeholder="Meta Description*">
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="input_box">
-                                <label>Meta Keywords</label>
-                                <div class="error form_error" id="form-error-meta_keywords"></div>
-                                <input type="text" name="meta_keywords" placeholder="Meta Keywords*">
                             </div>
                         </div>
                         <div class="clr"></div>
@@ -149,14 +142,14 @@ $(document).ready(function() {
         // if(confirm('Are you sure you want to Create Category?')){
             $.ajax({
                 type: "POST",
-                url: "{{ url('wm/blog-posts/store') }}",
+                url: "{{ route('admin.blog-posts.store') }}",
                 data:  new FormData(this),
                 dataType: 'json',
                 cache: false,
                 contentType: false,
                 processData: false,
                 success: function(result) {
-                    location.href="{{ url('wm/blog-posts') }}";
+                    location.href="{{ route('admin.blog-posts.index') }}";
                 },
                 error: function(data){
                     var responseData = data.responseJSON;        

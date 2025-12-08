@@ -97,7 +97,7 @@ BaseUrl.siteRoot = "{{ URL::to('/') }}/";
 
 		    $.ajax({
 		        type: "POST",
-		        url: BaseUrl.siteRoot+"wm/authenticate",
+		        url: "{{ route('admin.authenticate') }}",
 		        data:  new FormData(this),
 		        dataType: 'json',
 		        cache: false,
@@ -106,7 +106,7 @@ BaseUrl.siteRoot = "{{ URL::to('/') }}/";
 		        success: function(result) {
 		            $("#form_login_notification").addClass('form_login_success');
 		            $("#form_login_notification").html("Login successful");
-		            window.location.href = 'wm/dashboard';
+		            window.location.href = "{{ route('admin.dashboard') }}";
 		        },
 		        error: function(data){
 		            var responseData = data.responseJSON;

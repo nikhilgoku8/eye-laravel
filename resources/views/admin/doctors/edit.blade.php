@@ -6,10 +6,10 @@
         <div class="col-lg-12">
             <div class="page-header my_style">
                 <div class="left_section">
-                    <h1 class="">Edit Blog Category - {{ $result->title }}</h1>
+                    <h1 class="">Edit Doctor - {{ $result->title }}</h1>
                     <ul class="breadcrumb">
                         <li><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                        <li><a href="{{ route('admin.blogs-categories.index') }}">Blogs Categories</a></li>
+                        <li><a href="{{ route('admin.doctors.index') }}">Doctors</a></li>
                     </ul>    
                 </div>
                 
@@ -42,16 +42,36 @@
                         <div class="input_boxes">
                             <div class="col-sm-12">
                                 <div class="input_box">
-                                    <label>Category Name</label>
-                                    <div class="error form_error" id="form-error-title"></div>
-                                    <input type="text" name="title" placeholder="Category Name*" value="{{ $result->title }}">
+                                    <label>Specializations</label>
+                                    <div class="error form_error" id="form-error-specializations"></div>
+                                    <select name="specializations[]" multiple>
+                                        <option value="">Select Specializations</option>
+                                        @if(!empty($specializations))
+                                            @foreach($specializations as $row)
+                                                <option value="{{ $row->id }}" 
+                                                    {{ isset($result) && $result->specializations->contains($row->id) ? 'selected' : '' }}
+                                                    >{{ $row->title }}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <div class="input_box">
-                                    <label>Sort Order</label>
-                                    <div class="error form_error" id="form-error-sort_order"></div>
-                                    <input type="number" name="sort_order" value="{{ $result->sort_order }}" min="0">
+                                    <label>Doctor Name</label>
+                                    <div class="error form_error" id="form-error-name"></div>
+                                    <input type="text" name="name" placeholder="Doctor Name*" value="{{ $result->name }}">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="input_box">
+                                    <label>Status</label>
+                                    <div class="error form_error" id="form-error-is_active"></div>
+                                    <select name="is_active">
+                                        <option value="">Select Status</option>
+                                        <option value="1" @selected( $result->is_active == 1)>Active</option>
+                                        <option value="0" @selected( $result->is_active == 0)>Inactive</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-sm-12">
@@ -83,14 +103,14 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "{{ route('admin.blogs-categories.update', $result->id) }}",
+            url: "{{ route('admin.doctors.update', $result->id) }}",
             data:  formData,
             dataType: 'json',
             cache: false,
             contentType: false,
             processData: false,
             success: function(result) {
-                // location.href="{{ route('admin.blogs-categories.index') }}";
+                // location.href="{{ route('admin.doctors.index') }}";
                 window.location.reload(true);
             },
             error: function(data){

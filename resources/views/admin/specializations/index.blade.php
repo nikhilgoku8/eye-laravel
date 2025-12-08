@@ -5,16 +5,16 @@
         <div class="col-lg-12">
             <div class="page-header my_style">
                 <div class="left_section">
-                    <h1 class="">Blogs Categories</h1>
+                    <h1 class="">Specializations</h1>
                     <ul class="breadcrumb">
                         <li><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                        <li><a href="{{ route('admin.blogs-categories.index') }}">Blogs Categories</a></li>
+                        <li><a href="{{ route('admin.specializations.index') }}">Specializations</a></li>
                     </ul>    
                 </div>
                 
                 <div class="right_section">
                     <div class="purple_hollow_btn">
-                        <a href="{{ route('admin.blogs-categories.create') }}">Add New</a>
+                        <a href="{{ route('admin.specializations.create') }}">Add New</a>
                     </div>
                     <!-- <div class="orange_hollow_btn">
                         <a id="filter_option">Filter</a>
@@ -44,7 +44,7 @@
 
                 <div class="upper_sec">
                     <div class="left_section">
-                        <div class="title">All Categories</div>
+                        <div class="title">All Specializations</div>
                         <div class="sub_title"> </div>
                     </div>
                     <div class="right_section">
@@ -57,8 +57,8 @@
                     <table>
                         <tbody>
                             <tr>
-                                <th class="col-sm-5">Category Name</th>
-                                <th class="col-sm-2">Sort Order</th>
+                                <th class="col-sm-5">Title</th>
+                                <th class="col-sm-5">Doctors</th>
                                 <th class="col-sm-1">Created at</th>
                                 <th class="col-sm-1">Updated at</th>
                                 <th class="col-sm-2 center">ACTION</th>
@@ -66,9 +66,16 @@
                             @if(!empty($result) && count($result) > 0)
                                 @foreach($result as $row)
                                     <tr>
-                                        <td>{{ $row->title }}</td>
-                                        <td>{{ $row->sort_order }}</td>
-                                        
+                                        <td>{{ $row->title }}</td> 
+                                        <td>
+                                            @if(!empty($row->doctors) && count($row->doctors) > 0)
+                                                <ul>
+                                                    @foreach($row->doctors as $doctor)
+                                                        <li>{{ $doctor->name }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </td>                                       
                                         <td>
                                             @if(!empty($row->created_at))
                                                 {{ date('d-M-Y H:i:s', strtotime($row->created_at)) }}
@@ -80,7 +87,7 @@
                                             @endif
                                         </td>
                                         <td class="center">
-                                            <a href="{{ route('admin.blogs-categories.edit', $row->id) }}" class="edit_details">Edit</a>
+                                            <a href="{{ route('admin.specializations.edit', $row->id) }}" class="edit_details">Edit</a>
                                             <!-- <br> -->
                                             <span class="checkbox">
                                                 <input name="dataID" class="styled" type="checkbox" value="{{ $row->id }}">
@@ -126,7 +133,7 @@ $(document).ready(function() {
         if (confirm('Are you sure you want to delete these?')) {
             $.ajax({
                 type: "POST",
-                url: "{{ route('admin.blogs-categories.bulk-delete') }}",
+                url: "{{ route('admin.specializations.bulk-delete') }}",
                 data: {"_token":"{{ csrf_token() }}", "dataID":dataID},
                 dataType: 'json',
                 success: function(response) {

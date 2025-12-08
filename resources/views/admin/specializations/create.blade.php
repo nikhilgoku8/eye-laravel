@@ -6,10 +6,10 @@
         <div class="col-lg-12">
             <div class="page-header my_style">
                 <div class="left_section">
-                    <h1 class="">Add New Blog Category</h1>
+                    <h1 class="">Add New Specialization</h1>
                     <ul class="breadcrumb">
                         <li><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                        <li><a href="{{ route('admin.blogs-categories.index') }}">Blogs Categories</a></li>
+                        <li><a href="{{ route('admin.specializations.index') }}">Specializations</a></li>
                     </ul>    
                 </div>
                 
@@ -41,7 +41,7 @@
                     <div class="left_section">
                         <div class="title_text">
                             <div class="title">Please fillup the form </div>
-                            <!-- <div class="sub_title">Add New blogs-categories</div> -->
+                            <!-- <div class="sub_title">Add New specializations</div> -->
                         </div>
                     </div>
                     <div class="right_section">
@@ -55,16 +55,25 @@
                     <div class="input_boxes">
                         <div class="col-sm-12">
                             <div class="input_box">
-                                <label>Category Name</label>
-                                <div class="error form_error" id="form-error-title"></div>
-                                <input type="text" name="title" placeholder="Category Name*">
+                                <label>Doctors</label>
+                                <div class="error form_error" id="form-error-doctors"></div>
+                                <select name="doctors[]" multiple>
+                                    <option value="">Select Doctors</option>
+                                    @if(!empty($doctors))
+                                        @foreach($doctors as $row)
+                                            <option value="{{ $row->id }}" 
+                                                {{ isset($result) && $result->doctors->contains($row->id) ? 'selected' : '' }}
+                                                >{{ $row->title }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="input_box">
-                                <label>Sort Order</label>
-                                <div class="error form_error" id="form-error-sort_order"></div>
-                                <input type="number" name="sort_order" min="0">
+                                <label>Title</label>
+                                <div class="error form_error" id="form-error-title"></div>
+                                <input type="text" name="title" placeholder="Title*">
                             </div>
                         </div>
                         <div class="clr"></div>
@@ -99,14 +108,14 @@ $(document).ready(function() {
         // if(confirm('Are you sure you want to Create Category?')){
             $.ajax({
                 type: "POST",
-                url: "{{ route('admin.blogs-categories.store') }}",
+                url: "{{ route('admin.specializations.store') }}",
                 data:  new FormData(this),
                 dataType: 'json',
                 cache: false,
                 contentType: false,
                 processData: false,
                 success: function(result) {
-                    location.href="{{ route('admin.blogs-categories.index') }}";
+                    location.href="{{ route('admin.specializations.index') }}";
                 },
                 error: function(data){
                     var responseData = data.responseJSON;        

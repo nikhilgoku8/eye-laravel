@@ -19,6 +19,11 @@ class BlogPost extends Model
         'blog_date',
     ];
 
+    public function blogCategory()
+    {
+        return $this->belongsTo(BlogCategory::class);
+    }
+
     protected static function booted()
     {
         static::deleting(function ($post) {

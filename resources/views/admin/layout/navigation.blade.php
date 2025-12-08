@@ -89,6 +89,7 @@
                         <li>
                             <a href="{{ route('admin.specializations.index') }}"><i class="fa fa-list-ul" aria-hidden="true"></i> Specialization</a>
                             <a href="{{ route('admin.doctors.index') }}"><i class="fa fa-list-ul" aria-hidden="true"></i> Doctors</a>
+                            <a href="{{ route('admin.time-slots.index') }}"><i class="fa fa-list-ul" aria-hidden="true"></i> Time Slots</a>
                         </li>
                         
                         

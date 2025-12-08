@@ -104,6 +104,25 @@ tinymce.init({
         format: 'yyyy-mm-dd',
         daysOfWeekDisabled: [0]
     });
+
+    $('.future_timepicker').datetimepicker({
+        weekStart: 1,
+        autoclose: 1,
+        todayHighlight: 0,
+        startView: 1,    // start with hour view
+        minView: 0,      // allow minutes selection
+        maxView: 1,      // prevent switching to date view
+        format: 'hh:ii', // 24-hour time (HH:MM)
+        minuteStep: 15,  // 15 minutes interval
+        initialDate: new Date(0, 0, 0, 0, 0, 0),  // Avoid invalid internal date
+        showMeridian: false // 24-hour format
+    }).on('show', function () {
+        var picker = $(this).data('datetimepicker');
+        if (picker && !picker.date) {
+            // set some dummy base date so getTime() works
+            picker.setDate(new Date(1970, 0, 1, 0, 0, 0));
+        }
+    });
   
 </script>
 <!-- End calender -->

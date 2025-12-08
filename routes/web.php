@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\BlogPostController;
 use App\Http\Controllers\Admin\SpecializationController;
 use App\Http\Controllers\Admin\DoctorController;
+use App\Http\Controllers\Admin\TimeSlotController;
 
 use App\Http\Controllers\Front\HomeController;
 
@@ -70,6 +71,9 @@ Route::prefix('ewm')->as('admin.')->group(function () {
 
         Route::resource('/doctors', DoctorController::class);
         Route::post('/doctors/bulk-delete', [DoctorController::class, 'bulkDelete'])->name('doctors.bulk-delete');
+
+        Route::resource('/time-slots', TimeSlotController::class);
+        Route::post('/time-slots/bulk-delete', [TimeSlotController::class, 'bulkDelete'])->name('time-slots.bulk-delete');
 
     });
 

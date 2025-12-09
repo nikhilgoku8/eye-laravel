@@ -8,7 +8,7 @@
 	--purple: #493578;
 	--green: #cbde69;
 	--light-green: #f8fddd;
-	--header-height: 82px;
+	--header-height: 117.11px;
 }
 html, body, #wrapper {
 	height: 100%;
@@ -779,6 +779,20 @@ header .inner_container{
 	border-radius: 150px;
 	padding: 10px 20px;
 }
+.form_wrapper .input_box textarea{
+	font-size: 16px;
+	color: #000;
+	width: 100%;
+	border: 1px solid var(--purple);
+	border-radius: 150px;
+	padding: 10px 20px;
+	resize: none;
+}
+.form_error{
+	font-size: 14px;
+    color: red;
+    padding: 0 0 0 20px;
+}
 
 footer{
 	background: #f1f6f9;
@@ -1527,4 +1541,10 @@ footer .lower_sec{
     content: "\f101";
     font-family: "Font Awesome 7 Free";
     font-weight: 900;
+}
+
+/*thank_you_page*/
+.thank_you_page .inner_container{
+	text-align: center;
+	padding: 50px 0;
 }

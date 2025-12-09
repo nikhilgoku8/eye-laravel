@@ -1,10 +1,12 @@
-<?php include('includes/header.php') ?>
+@extends('front.layout.master')
+
+@section('content')
 
 <div class="services_page">
 
 <div class="hero">
     <div class="img_box">
-        <img src="images/banners/services.jpg">
+        <img src="{{ asset('front/images/banners/services.jpg') }}">
     </div>
     <div class="text_overlay">
         <div class="inner_container">
@@ -22,31 +24,7 @@
     </div>
 </div>
 
-<div class="feature_boxes">
-    <div class="container">
-        <div class="inner_container">
-            
-            <div class="info_box">
-                <div class="icon"><img src="images/icons/experience.png"></div>
-                <div class="text">19+ Years of<br> Excellence in Eye Care</div>
-            </div>
-            <div class="info_box">
-                <div class="icon"><img src="images/icons/surgeries.png"></div>
-                <div class="text">50,000+ <br> Successful Surgeries</div>
-            </div>
-            <div class="info_box">
-                <div class="icon"><img src="images/icons/technology.png"></div>
-                <div class="text">Advanced <br> Diagnostic Technology</div>
-            </div>
-            <div class="info_box">
-                <div class="icon"><img src="images/icons/team.png"></div>
-                <div class="text">Experienced <br> Specialist Team</div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- feature_boxes -->
+@include('front.includes.features')
 
 <div class="about_hospital main_services">
     <div class="container">
@@ -72,37 +50,37 @@
             <div class="six_boxes">
                 <div class="info_box">
                     <div class="img_box">
-                        <img src="images/services/visual-acuity-and-refraction-assessment.png">
+                        <img src="{{ asset('front/images/services/visual-acuity-and-refraction-assessment.png') }}">
                     </div>
                     <div class="text_box">Visual acuity and refraction assessment</div>
                 </div>
                 <div class="info_box">
                     <div class="img_box">
-                        <img src="images/services/slit-lamp-examination.png">
+                        <img src="{{ asset('front/images/services/slit-lamp-examination.png') }}">
                     </div>
                     <div class="text_box">Slit-lamp examination</div>
                 </div>
                 <div class="info_box">
                     <div class="img_box">
-                        <img src="images/services/fundus-and-retinal-check-up.png">
+                        <img src="{{ asset('front/images/services/fundus-and-retinal-check-up.png') }}">
                     </div>
                     <div class="text_box">Fundus and retinal check-up</div>
                 </div>
                 <div class="info_box">
                     <div class="img_box">
-                        <img src="images/services/intraocular-pressure-measurement.png">
+                        <img src="{{ asset('front/images/services/intraocular-pressure-measurement.png') }}">
                     </div>
                     <div class="text_box">Intraocular pressure measurement</div>
                 </div>
                 <div class="info_box">
                     <div class="img_box">
-                        <img src="images/services/color-vision-and-contrast-sensitivity-testing.png">
+                        <img src="{{ asset('front/images/services/color-vision-and-contrast-sensitivity-testing.png') }}">
                     </div>
                     <div class="text_box">Color vision and contrast sensitivity testing</div>
                 </div>
                 <div class="info_box">
                     <div class="img_box">
-                        <img src="images/services/binocular-vision-assessment.png">
+                        <img src="{{ asset('front/images/services/binocular-vision-assessment.png') }}">
                     </div>
                     <div class="text_box">Binocular vision assessment</div>
                 </div>
@@ -150,7 +128,7 @@
             <div class="panes_wrapper">
                 <div class="left_pane">
                     <div class="img_box">
-                        <img src="images/services.png">
+                        <img src="{{ asset('front/images/services.png') }}">
                     </div>
                 </div>
                 <div class="right_pane">
@@ -226,13 +204,13 @@
             <div class="two_boxes">
                 <div class="info_box">
                     <div class="img_box">
-                        <img src="images/services/monitoring-and-lowering-intraocular-pressure.png">
+                        <img src="{{ asset('front/images/services/monitoring-and-lowering-intraocular-pressure.png') }}">
                     </div>
                     <div class="text_box">Monitoring and lowering intraocular pressure</div>
                 </div>
                 <div class="info_box">
                     <div class="img_box">
-                        <img src="images/services/laser-and-surgical-interventions.png">
+                        <img src="{{ asset('front/images/services/laser-and-surgical-interventions.png') }}">
                     </div>
                     <div class="text_box">Laser and surgical interventions</div>
                 </div>
@@ -252,7 +230,7 @@
                     <div class="heading">Pediatric<br> Ophthalmologist</div>
                     <div class="inner_box">
                         <div class="img_box">
-                            <img src="images/services/pediatric-ophthalmologist.png">
+                            <img src="{{ asset('front/images/services/pediatric-ophthalmologist.png') }}">
                         </div>
                         <div class="text_box">Eye exams for children including squint, amblyopia, pediatric cataract</div>
                     </div>
@@ -261,7 +239,7 @@
                     <div class="heading">Oculoplasty<br> Expert</div>
                     <div class="inner_box">
                         <div class="img_box">
-                            <img src="images/services/oculoplasty-expert.png">
+                            <img src="{{ asset('front/images/services/oculoplasty-expert.png') }}">
                         </div>
                         <div class="text_box">Eyelid surgery, tear duct obstruction, orbital surgery</div>
                     </div>
@@ -273,56 +251,9 @@
 </div>
 <!-- two_services -->
 
-<div class="get_in_touch">
-    <div class="container">
-        <div class="inner_container">
-            
-            <div class="col-sm-5">
-                <div class="left_pane">
-                    <div class="title">get in touch <span class="line"></span></div>
-                    <ul class="ctc_info">
-                        <li>Address : 1st floor, W, Aftab Classic, SV Rd, opp.<br> City Hospital, Raj Nagar, Gautam Nagar, Jogeshwari<br> West, Mumbai, Maharashtra 400102</li>
-                        <li>Phone: <a href="#">098201 66630</a> </li>
-                        <li>Email: <a href="#">xxxxxxx</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-2"></div>
-            <div class="col-sm-5">
-                <div class="form_wrapper">
-                    <form>
-                        <div class="col-sm-12">
-                            <div class="input_box">
-                                <input type="text" name="name" placeholder="Name">
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="input_box">
-                                <input type="text" name="name" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="input_box">
-                                <input type="text" name="name" placeholder="Message">
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="input_box">
-                                <button type="submit" class="purple_filled_btn">submit</button>
-                            </div>
-                        </div>
-                        <div class="clr"></div>
-                    </form>
-                </div>
-            </div>
-            <div class="clr"></div>
-
-        </div>
-    </div>
-</div>
-<!-- get_in_touch -->
+@include('front.includes.get-in-touch')
 
 </div>
 <!-- services_page -->
 
-<?php include('includes/footer.php') ?>
+@endsection

@@ -20,6 +20,20 @@ use App\Models\BlogCategory;
 use App\Models\BlogPost;
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/blog-and-resources', [HomeController::class, 'blog_and_resources'])->name('blog-and-resources');
+Route::get('/blogs', [HomeController::class, 'blogs'])->name('blogs');
+Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
+Route::get('/eye-diseases', [HomeController::class, 'eye_diseases'])->name('eye-diseases');
+Route::get('/faqs', [HomeController::class, 'faqs'])->name('faqs');
+Route::get('/info', [HomeController::class, 'info'])->name('info');
+Route::get('/services', [HomeController::class, 'services'])->name('services');
+Route::get('/surgeries', [HomeController::class, 'surgeries'])->name('surgeries');
+Route::get('/team', [HomeController::class, 'team'])->name('team');
+Route::get('/testimonials', [HomeController::class, 'testimonials'])->name('testimonials');
+Route::post('/enquiry/store', [HomeController::class, 'enquiry_store'])->name('enquiry.store');
+Route::get('/enquiry/thank-you', [HomeController::class, 'enquiry_thank_you'])->name('enquiry.thank-you');
+Route::post('/appointment/store', [HomeController::class, 'appointment_store'])->name('appointment.store');
+Route::get('/appointment/thank-you', [HomeController::class, 'appointment_thank_you'])->name('appointment.thank-you');
 
 $categories = BlogCategory::pluck('slug')->implode('|');
 if ($categories) {
@@ -37,6 +51,7 @@ if ($posts) {
     Route::get('p/{post}', [HomeController::class, 'blog_post']);
 }
 
+Route::get('test-mail', [MailController::class, 'test_mail']);
 
 // Route::get('blogs-search', [HomeController::class, 'blogs_search']);
 // Route::get('/category-blogs/load-more', [HomeController::class, 'loadMoreBlogs']);

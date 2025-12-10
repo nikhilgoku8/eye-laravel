@@ -20,16 +20,17 @@ return new class extends Migration
             $table->foreignId('doctor_id')->constrained('doctors')->onDelete('restrict');
             $table->foreignId('slot_id')->constrained('time_slots')->onDelete('restrict');
             $table->date('appointment_date');
+            $table->text('patient_message')->nullable();
     
             // Doctor snapshot
-            $table->string('specialization', 150);
+            $table->string('specialization_name', 150);
             $table->string('doctor_name', 150);
 
             // Slot snapshot
             $table->time('start_time');
             $table->time('end_time');
 
-            $table->string('message')->nullable();
+            $table->text('doctor_remarks')->nullable();
             $table->string('status', 20)->comment('pending, confirmed, cancelled')->default('pending');
             $table->unique(['doctor_id', 'slot_id', 'appointment_date']);
             $table->timestamps();

@@ -35,50 +35,77 @@ class LoginController extends Controller
             'email'=>'required|email',
             'password'=>'required'
         ]);
-        
-        if(!$validator->passes()){
+    
+        if ($validator->fails()) {
             return response()->json([
-                'error' => true,
-                'error_type' => 'form',
-                'message' => 'Invalid request',
-                'errors' => $validator->errors()->toArray(),
+                'errors' => $validator->errors(),
             ], 422);
-
-        }else{
-
-            $admin = Admin::where('email', $request->email)->first();
-
-            if($admin){
-
-                if (Hash::check($request->password, $admin->password)) {
-
-                    $admin->update(['last_login' => now()]);
-
-                    $request->session()->put('username', $admin->fname);
-                    $request->session()->put('userid', $admin->id);
-                    $request->session()->put('isAdmin', 'yes');
-                    $request->session()->put('last_login', $admin->last_login ?? now());
-                    $response = array(
-                        'success' => true,
-                        'message' => 'Login successful'
-                    );
-                }else{
-                    $response = array(
-                        'error' => true,
-                        'error_type' => 'login',
-                        'message' => 'Login failed'
-                    );
-                }      
-            }else{
-                $response = array(
-                    'error' => true,
-                    'error_type' => 'login',
-                    'message' => 'Login failed'
-                );
-            }
-
-            return response()->json($response);
         }
+
+        $admin = Admin::where('email', $request->email)->first();
+
+        if (!$admin || !Hash::check($request->password, $admin->password)) {
+            return response()->json([
+                'message' => 'Invalid email or password',
+            ], 401);
+        }
+
+        // Success
+        $admin->update(['last_login' => now()]);
+        
+        $request->session()->put('username', $admin->fname);
+        $request->session()->put('userid', $admin->id);
+        $request->session()->put('isAdmin', 'yes');
+        $request->session()->put('last_login', $admin->last_login ?? now());
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Login successful',
+        ]);
+        
+        // if(!$validator->passes()){
+        //     return response()->json([
+        //         'error' => true,
+        //         'error_type' => 'form',
+        //         'message' => 'Invalid request',
+        //         'errors' => $validator->errors()->toArray(),
+        //     ], 422);
+
+        // }else{
+
+        //     $admin = Admin::where('email', $request->email)->first();
+
+        //     if($admin){
+
+        //         if (Hash::check($request->password, $admin->password)) {
+
+        //             $admin->update(['last_login' => now()]);
+
+        //             $request->session()->put('username', $admin->fname);
+        //             $request->session()->put('userid', $admin->id);
+        //             $request->session()->put('isAdmin', 'yes');
+        //             $request->session()->put('last_login', $admin->last_login ?? now());
+        //             $response = array(
+        //                 'success' => true,
+        //                 'message' => 'Login successful'
+        //             );
+        //         }else{
+        //             $response = array(
+        //                 'error' => true,
+        //                 'error_type' => 'login',
+        //                 'message' => 'Login failed'
+        //             );
+        //         }      
+        //     }else{
+        //         $response = array(
+        //             'error' => true,
+        //             'error_type' => 'login',
+        //             'message' => 'Login failed'
+        //         );
+        //     }
+
+        //     return response()->json($response);
+        // }
 
     }
 

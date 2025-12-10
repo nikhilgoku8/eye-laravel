@@ -38,6 +38,12 @@
 
 <link href="{{ asset('front/plugins/venobox/venobox.min.css') }}" rel="stylesheet" type="text/css" media="screen" />
 
+
+<!-- Bootstrap Core CSS -->
+<link href="{{ asset('admin/assets/css/bootstrap.min.css') }}" rel="stylesheet">
+<!--Datepicker-->
+<link href="{{ asset('admin/assets/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+
 <link href="{{ asset('front/css/style.css?ver=') }}{{date('Ymdhis')}}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('front/css/responsive.css?ver=') }}{{date('Ymdhis')}}" rel="stylesheet" type="text/css" />
 
@@ -86,7 +92,7 @@
             </ul>
         </nav>
         <div class="btn_wrapper">
-            <a href="#" class="green_filled_btn">
+            <a class="green_filled_btn request_callback">
                 <span class="txt">Appoinment</span>
                 <span class="icon"><img src="{{ asset('front/images/icons/calender.png') }}"></span>
             </a>

@@ -6,6 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Enquiry;
+use App\Models\Specialization;
+use App\Models\Doctor;
+use App\Models\TimeSlot;
+use App\Models\Appointment;
+use Mail;
+use Carbon\Carbon;
+use App\Mail\OTPMail;
 
 class HomeController extends Controller
 {
@@ -190,12 +197,15 @@ class HomeController extends Controller
             $rules = [
                 'patient_name' => 'required|string|max:150',
                 'patient_email' => 'required|email|max:150',
-                'patient_phone' => 'required|numeric|max:10',
+                'patient_phone' => 'required|numeric|digits:10',
                 'specialization_id' => 'required|exists:specializations,id',
                 'doctor_id' => 'required|exists:doctors,id',
                 'slot_id' => 'required|exists:time_slots,id',
                 'appointment_date' => 'required|date',
-                'message' => 'required|string',
+                'patient_message' => 'nullable|string',
+                'otp'=>'required|numeric|digits:6',
+                // 'doctor_remarks' => 'required|string',
+                // 'status' => 'required|string|max:20',
             ];
 
             $messages = [];
@@ -206,6 +216,22 @@ class HomeController extends Controller
 
             // This validates and gives errors which are caught below and also stop further execution
             $validated = $validator->validated();
+
+            if(session('otp') != $request->otp){
+                $validator->getMessageBag()->add('otp', 'OTP does not match');
+                throw new \Illuminate\Validation\ValidationException($validator);
+            }elseif (session('otp_email') !== $request->patient_email) {
+                $validator->getMessageBag()->add('patient_email', 'Email must match OTP sent email');
+                throw new \Illuminate\Validation\ValidationException($validator);
+            }elseif (session('otp_expires_at') < now()) {
+                $validator->getMessageBag()->add('otp', 'OTP Expired');
+                throw new \Illuminate\Validation\ValidationException($validator);
+            }
+
+            $validated['specialization_name'] = Specialization::where('id', $validated['specialization_id'])->value('title');
+            $validated['doctor_name'] = Doctor::where('id', $validated['doctor_id'])->value('name');
+            $validated['start_time'] = TimeSlot::where('id', $validated['slot_id'])->value('start_time');
+            $validated['end_time'] = TimeSlot::where('id', $validated['slot_id'])->value('end_time');
 
             Appointment::create($validated);
 
@@ -229,4 +255,156 @@ class HomeController extends Controller
             ], 500);
         }
     }
+
+    public function getDoctorBySpecialization(Request $request)
+    {
+        $specialization = Specialization::find($request->input('specialization_id'));
+        return $specialization->doctors()->where('is_active', 1)->get();
+    }
+
+    // public function getTimeSlots(Request $request)
+    // {
+    //     $request->validate([
+    //         'doctor_id' => 'required|exists:doctors,id',
+    //         'appointment_date'      => 'required|date|after_or_equal:today'
+    //     ]);
+
+    //     // All global time slots
+    //     $timeSlots = TimeSlot::where('is_active', 1)->orderBy('start_time')->get();
+
+    //     // Booked slots for this doctor on that date
+    //     $booked = Appointment::where('doctor_id', $request->doctor_id)
+    //         ->where('appointment_date', $request->appointment_date)
+    //         ->where('status', '!=', 'cancelled')
+    //         ->pluck('slot_id')
+    //         ->toArray();
+
+    //     // Mark availability inside collection
+    //     $slots = $timeSlots->map(function ($slot) use ($booked) {
+    //         $slot->is_booked = in_array($slot->id, $booked);
+    //         return $slot;
+    //     });
+
+    //     return response()->json([
+    //         'status' => 'success',
+    //         'slots'  => $slots
+    //     ]);
+
+    // }
+
+    public function getTimeSlots(Request $request)
+    {
+        $request->validate([
+            'doctor_id' => 'required|exists:doctors,id',
+            'appointment_date' => 'required|date|after_or_equal:today'
+        ]);
+
+        $appointmentDate = $request->appointment_date;
+        $today = now()->toDateString();
+
+        // Base query for active slots
+        $timeSlotsQuery = TimeSlot::where('is_active', 1);
+
+        // If date is today, filter slots greater than current time
+        if ($appointmentDate === $today) {
+            $currentTime = now()->format('H:i:s');
+            $timeSlotsQuery->where('start_time', '>', $currentTime);
+        }
+
+        // Fetch filtered time slots
+        $timeSlots = $timeSlotsQuery->orderBy('start_time')->get();
+
+        // Booked slots for this doctor on that date
+        $booked = Appointment::where('doctor_id', $request->doctor_id)
+            ->where('appointment_date', $appointmentDate)
+            ->where('status', '!=', 'cancelled')
+            ->pluck('slot_id')
+            ->toArray();
+
+        // Add is_booked flag
+        $slots = $timeSlots->map(function ($slot) use ($booked) {
+            $slot->is_booked = in_array($slot->id, $booked);
+            return $slot;
+        });
+
+        return response()->json([
+            'status' => 'success',
+            'slots'  => $slots
+        ]);
+    }
+
+    public function sendOtpViaEmail(Request $request)
+    {
+        try {
+
+            $validated = $request->validate([
+                'patient_email' => 'required|email'
+            ]);
+
+            $email = $validated['patient_email'];
+
+            // Check rate limiting
+            if (session()->has('otp_last_sent_at')) {
+                $diff = abs(now()->diffInSeconds(session('otp_last_sent_at')));
+                    // dd($diff);
+                if ($diff < 120) {
+                    throw \Illuminate\Validation\ValidationException::withMessages([
+                        'request_otp' => 'Please wait before requesting another OTP.',
+                    ]);
+                }
+            }
+
+            // Check if OTP exists and still valid
+            if (
+                session()->has('otp') &&
+                ( session()->has('otp_email') && session('otp_email') == $email ) &&
+                session()->has('otp_expires_at') &&
+                now()->lessThan(session('otp_expires_at'))
+            ) {
+                $otp = session('otp');
+            } else {
+                // Generate new OTP
+                $otp = rand(100000, 999999);
+
+                session([
+                    'otp' => $otp,
+                    'otp_expires_at' => now()->addMinutes(10),
+                    'otp_email' => $email,
+                ]);
+            }
+
+            // Send OTP email
+            Mail::to($email)->send(new OTPMail($otp));
+
+            // Update last sent timestamp
+            session(['otp_last_sent_at' => now()]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'OTP Sent',
+            ]);
+
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return response()->json([
+                'status' => 'error',
+                'error_type' => 'form',
+                'errors' => $e->errors(),
+            ], 422);
+        } catch (\Exception $e) {
+            // dd($e);
+            return response()->json([
+                'status' => 'error',
+                'error_type' => 'server',
+                'message' => 'Something went wrong. Please try again later.',
+                'console_message' => $e->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function testOtpMail($otp='')
+    {
+        $otp = 123465;
+        Mail::to('nikhilgoku8@gmail.com')->send(new OTPMail($otp));
+    }
+
 }

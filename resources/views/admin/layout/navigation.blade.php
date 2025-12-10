@@ -91,6 +91,16 @@
                             <a href="{{ route('admin.doctors.index') }}"><i class="fa fa-list-ul" aria-hidden="true"></i> Doctors</a>
                             <a href="{{ route('admin.time-slots.index') }}"><i class="fa fa-list-ul" aria-hidden="true"></i> Time Slots</a>
                         </li>
+
+                        <li>
+                            <a><i class="fa fa-medkit" aria-hidden="true"></i> Appointments<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><a href="{{ route('admin.appointments.index') }}">All</a></li>
+                                <li><a href="{{ route('admin.appointments.upcoming') }}">Upcoming</a></li>
+                                <li><a href="{{ route('admin.appointments.past') }}">Past</a></li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
                         
                         
                     </ul>

@@ -21,8 +21,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $ua = strtolower($_SERVER['HTTP_USER_AGENT']);
-        $desktop = strpos($ua,'android')=== false && strpos($ua,'iphone')=== false;
+        $ua = strtolower($_SERVER['HTTP_USER_AGENT'] ?? '');
+        // $desktop = strpos($ua,'android')=== false && strpos($ua,'iphone')=== false;
+        $desktop = !str_contains($ua, 'android') && !str_contains($ua, 'iphone');
         View::share('desktop', $desktop);
 
         $specializations = Specialization::all();

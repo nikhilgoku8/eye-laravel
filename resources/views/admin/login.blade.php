@@ -108,18 +108,51 @@ BaseUrl.siteRoot = "{{ URL::to('/') }}/";
 		            $("#form_login_notification").html("Login successful");
 		            window.location.href = "{{ route('admin.dashboard') }}";
 		        },
-		        error: function(data){
-		            var responseData = data.responseJSON;
-		            if(responseData.error_type=='login'){
-		            	$("#form_login_notification").addClass('form_login_error');
-		            	$("#form_login_notification").html(responseData.message);
-		            }else if(responseData.error_type=='form'){
-		            	jQuery.each( responseData.errors, function( i, val ) {
-					    	$("#form-error-"+i).html(val);
-					    	$("#form-error-"+i).addClass('alert alert-danger');
-						});
-		            }
-		        }
+		        // error: function(data){
+		        //     var responseData = data.responseJSON;
+		        //     if(responseData.error_type=='login'){
+		        //     	$("#form_login_notification").addClass('form_login_error');
+		        //     	$("#form_login_notification").html(responseData.message);
+		        //     }else if(responseData.error_type=='form'){
+		        //     	jQuery.each( responseData.errors, function( i, val ) {
+				// 	    	$("#form-error-"+i).html(val);
+				// 	    	$("#form-error-"+i).addClass('alert alert-danger');
+				// 		});
+		        //     }
+		        // }
+		        error: function(data) {
+				    $(".form_error").html("").removeClass("alert alert-danger");
+
+				    if (data.status === 422) {
+				        // Validation errors
+				        let errors = data.responseJSON.errors;
+				        $.each(errors, function(key, message) {
+				            $('#form-error-' + key)
+				                .html(message)
+				                .addClass('alert alert-danger');
+				        });
+
+				    } else if (data.status === 401) {
+				        // Invalid login
+				        $("#form_login_notification")
+				            .addClass('form_login_error')
+				            .html(data.responseJSON.message);
+
+				    } else if (data.status === 403) {
+				        alert("You don’t have permission.");
+
+				    } else if (data.status === 404) {
+				        alert("Resource was not found.");
+
+				    } else if (data.status === 500) {
+				        alert("Server error. Please try again.");
+				        console.log(data.responseJSON);
+
+				    } else {
+				        alert("Unexpected error: " + data.status);
+				        console.log(data);
+				    }
+				}
 		    });
 
 		}));

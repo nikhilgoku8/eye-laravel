@@ -152,49 +152,7 @@
             <div class="title center">Make an appoinment</div>
             <div class="sub_title center">We will send you a confirmation within 24 hours.</div>
             <div class="form_wrapper">
-                <form>
-                    <div class="col-sm-4">
-                        <div class="input_box">
-                            <input type="text" name="name" placeholder="Name">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="input_box">
-                            <input type="text" name="name" placeholder="Phone">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="input_box">
-                            <input type="text" name="name" placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="input_box">
-                            <input type="text" name="name" placeholder="Department">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="input_box">
-                            <input type="text" name="name" placeholder="Date">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="input_box">
-                            <input type="text" name="name" placeholder="Doctor">
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="input_box">
-                            <input type="text" name="name" placeholder="Message">
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="input_box center">
-                            <button type="submit" class="purple_filled_btn">submit</button>
-                        </div>
-                    </div>
-                    <div class="clr"></div>
-                </form>
+                @include('front.includes.appointment-form')
             </div>
 
         </div>

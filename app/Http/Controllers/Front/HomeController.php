@@ -26,6 +26,16 @@ class HomeController extends Controller
         return view('front.home', $data);
     }
 
+    public function about_us()
+    {
+        $data = [
+            'meta_title' => "About Us | Eye Hospital",
+            'meta_description' => "About Us | Eye Hospital",
+        ];
+        
+        return view('front.about-us', $data);
+    }
+
     public function blog_and_resources()
     {
         $data = [

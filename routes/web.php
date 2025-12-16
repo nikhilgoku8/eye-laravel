@@ -21,6 +21,7 @@ use App\Models\BlogCategory;
 use App\Models\BlogPost;
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/about-us', [HomeController::class, 'about_us'])->name('about-us');
 Route::get('/blog-and-resources', [HomeController::class, 'blog_and_resources'])->name('blog-and-resources');
 Route::get('/blogs', [HomeController::class, 'blogs'])->name('blogs');
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');

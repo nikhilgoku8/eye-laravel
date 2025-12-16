@@ -84,7 +84,7 @@
                     </ul>
                 </li> -->
                 <li><a href="#">Overview</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="{{ route('about-us') }}">About Us</a></li>
                 <li><a href="{{ route('services') }}">Services</a></li>
                 <li><a href="{{ route('team') }}">Team</a></li>
                 <li><a href="{{ route('info') }}">Info</a></li>

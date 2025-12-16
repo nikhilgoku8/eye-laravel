@@ -14,19 +14,16 @@
                 <div class="footer_box">
                     <div class="title">quick links</div>
                     <ul class="quick_links">
-                        <li>Services</li>
+                        <li><a href="{{ route('services') }}">Services</a></li>
                         <li>About Us</li>
-                        <li>Contact</li>
-                        <li>Team</li>
-                        <li><a href="{{ route('blog-and-resources') }}">Blog and Resources</a></li>
-                        <li><a href="{{ route('blogs') }}">Blogs</a></li>
                         <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                        <li><a href="{{ route('team') }}">Team</a></li>
+                        <li><a href="{{ route('blog-and-resources') }}">Blog and Resources</a></li>
+                        <!-- <li><a href="{{ route('blogs') }}">Blogs</a></li> -->
                         <li><a href="{{ route('eye-diseases') }}">Eye Diseases</a></li>
                         <li><a href="{{ route('faqs') }}">Faqs</a></li>
                         <li><a href="{{ route('info') }}">Info</a></li>
-                        <li><a href="{{ route('services') }}">Services</a></li>
                         <li><a href="{{ route('surgeries') }}">Surgeries</a></li>
-                        <li><a href="{{ route('team') }}">Team</a></li>
                         <li><a href="{{ route('testimonials') }}">Testimonials</a></li>
                     </ul>
                 </div>

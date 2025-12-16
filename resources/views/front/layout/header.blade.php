@@ -85,9 +85,9 @@
                 </li> -->
                 <li><a href="#">Overview</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="services.php">Service</a></li>
-                <li><a href="team.php">Team</a></li>
-                <li><a href="info.php">Info</a></li>
+                <li><a href="{{ route('services') }}">Services</a></li>
+                <li><a href="{{ route('team') }}">Team</a></li>
+                <li><a href="{{ route('info') }}">Info</a></li>
                 <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
             </ul>
         </nav>

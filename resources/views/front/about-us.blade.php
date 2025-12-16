@@ -27,7 +27,7 @@
 @include('front.includes.features')
 
 <div class="our_story">
-    <div class="container">
+    <!-- <div class="container"> -->
         <div class="inner_container">
             
             <div class="img_box">
@@ -39,99 +39,62 @@
             </div>
 
         </div>
-    </div>
+    <!-- </div> -->
 </div>
 <!-- our_story -->
 
-<div class="resources_wrapper">
+<div class="mission_vision_values">
     <div class="container">
         <div class="inner_container">
             
-            <div class="left_pane">
-                <div class="info_box">
-                    <div class="img_box">
-                        <img src="{{ asset('front/images/resources/1.jpg') }}">
-                    </div>
-                    <div class="text_box">
-                        <div class="article_title">Eye Health Articles</div>
-                        <div class="description">Cupidatat ut voluptate culpa enim in sint amet sunt in irure aute sit in deserunt consectetur. Tempor ad ea culpa adipisicing do nostrud eiusmod excepteur ex consequat.</div>
-                    </div>
+            <div class="upper_sec">
+                <div class="pane left_pane">
+                    <div class="title">Our Mission</div>
+                    <div class="text">To deliver exceptional eye care services through clinical excellence, advanced technology, and compassionate patient care. We strive to preserve and restore vision while upholding the highest standards of ethics and affordability.</div>
+                </div>
+                <div class="pane right_pane">
+                    <div class="title">Our Vision</div>
+                    <div class="text">To be recognized as Mumbai’s top eye care institution, setting benchmarks in patient satisfaction, clinical outcomes, and innovation.</div>
                 </div>
             </div>
-            <div class="right_pane">
-                <ul class="articles_list">
-                    <?php for ($i=0; $i < 4; $i++) { ?>
-                        <li>
-                            <a href="#">
-                                <div class="article_title">Eye Health Articles</div>
-                                <div class="description">Ut ut ut reprehenderit eiusmod quis incididunt tempor nostrud pariatur aliquip.</div>
-                            </a>
-                        </li>
-                    <?php } ?>
-                </ul>
-                <div class="text">Patient-friendly PDFs on pre-surgery preparation, eye care tips, chronic disease management. Click and download now.</div>
-                <div class="download_guides">
-                    <a href="#">Downloadable Guides</a>
+            <div class="lower_sec">
+                <div class="left_pane">
+                    <div class="title">Our Values</div>
+                </div>
+                <div class="right_pane">
+                    <div class="info_boxes">
+                        <div class="info_box">
+                            <div class="sub_title">Excellence:</div>
+                            <div class="text">Commitment to superior medical care standards</div>
+                        </div>
+                        <div class="info_box">
+                            <div class="sub_title">Innovation:</div>
+                            <div class="text">Embracing cutting-edge technologies & techniques</div>
+                        </div>
+                        <div class="info_box">
+                            <div class="sub_title">Accessibility:</div>
+                            <div class="text">Making quality eye care affordable and available</div>
+                        </div>
+                        <div class="info_box">
+                            <div class="sub_title">Compassion:</div>
+                            <div class="text">Treating every patient with empathy and respect</div>
+                        </div>
+                        <div class="info_box">
+                            <div class="sub_title">Integrity:</div>
+                            <div class="text">Maintaining transparency and ethical practice</div>
+                        </div>
+                        <div class="info_box">
+                            <div class="sub_title">Excellence:</div>
+                            <div class="text">Commitment to superior medical care standards</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
-<!-- resources_wrapper -->
-
-<div class="big_video">
-    <div class="video_wrapper">
-        <video muted autoplay loop>
-            <source src="{{ asset('front/videos/sample.mp4') }}" type="video/mp4">
-        </video>
-    </div>
-</div>
-<!-- big_video -->
-
-<div class="blogs_wrapper">
-    <div class="container">
-        <div class="inner_container">
-            
-            <div class="heading">Blogs</div>
-
-            <div class="blog_boxes">
-                <div class="blog_box">
-                    <div class="img_box">
-                        <img src="{{ asset('front/images/blogs/1.png') }}">
-                    </div>
-                    <div class="text_box">
-                        <div class="blog_title">See the doctor for different ways</div>
-                        <p>Ut cupidatat fugiat ullamco dolore tempor minim ut veniam elit officia eiusmod non sunt fugiat est.</p>
-                        <div class="lower_txt">
-                            <div class="hospital_name">Orbit Eye Hospital</div>
-                            <div class="time">5 days, 21 hours ago</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog_box">
-                    <div class="img_box">
-                        <img src="{{ asset('front/images/blogs/1.png') }}">
-                    </div>
-                    <div class="text_box">
-                        <div class="blog_title">See the doctor for different ways</div>
-                        <p>Ut cupidatat fugiat ullamco dolore tempor minim ut veniam elit officia eiusmod non sunt fugiat est.</p>
-                        <div class="lower_txt">
-                            <div class="hospital_name">Orbit Eye Hospital</div>
-                            <div class="time">5 days, 21 hours ago</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="btn_wrapper center">
-                <a href="{{ route('blogs') }}" class="purple_hollow_btn">More Blogs</a>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- blogs_wrapper -->
-
+<!-- mission_vision_values -->
 
 @include('front.includes.get-in-touch')
 

@@ -1724,4 +1724,82 @@ footer .lower_sec{
 }
 .our_story .inner_container .text_box{
 	width: 50%;
+	padding: 0 calc(50vw - 585px) 0 5vw;
+}
+
+.mission_vision_values .inner_container{
+	padding: 70px 0;
+}
+.mission_vision_values .inner_container .title{
+	padding: 0 0 15px;
+	transition: all 0.3s;
+}
+.mission_vision_values .inner_container .text{
+	line-height: 1.8em;
+	color: var(--purple);
+	transition: all 0.3s;
+}
+.mission_vision_values .inner_container .sub_title{
+	font-size: 16px;
+	line-height: 1.8em;
+	font-weight: 700;
+	color: var(--purple);
+	transition: all 0.3s;
+}
+.mission_vision_values .inner_container .upper_sec{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.mission_vision_values .inner_container .upper_sec .pane{
+	width: calc(50% - 10px);
+	background-color: var(--light-green);
+	padding: 60px 80px;
+	transition: all 0.3s;
+}
+.mission_vision_values .inner_container .upper_sec .pane:hover{
+	background-color: var(--purple);
+}
+.mission_vision_values .inner_container .upper_sec .pane:hover .title{
+	color: #fff;
+}
+.mission_vision_values .inner_container .upper_sec .pane:hover .text{
+	color: #fff;
+}
+.mission_vision_values .inner_container .lower_sec{
+	background-color: var(--light-green);
+	padding: 60px 80px 25px 80px;
+	margin: 20px 0 0 0;
+	display: flex;
+	flex-wrap: wrap;
+	transition: all 0.3s;
+}
+.mission_vision_values .inner_container .lower_sec:hover{
+	background-color: var(--purple);
+}
+.mission_vision_values .inner_container .lower_sec:hover .title{
+	color: #fff;
+}
+.mission_vision_values .inner_container .lower_sec:hover .text{
+	color: #fff;
+}
+.mission_vision_values .inner_container .lower_sec:hover .sub_title{
+	color: #fff;
+}
+.mission_vision_values .inner_container .lower_sec .left_pane{
+	width: 25%;
+}
+.mission_vision_values .inner_container .lower_sec .right_pane{
+	width: 75%;
+}
+.mission_vision_values .inner_container .lower_sec .right_pane .info_boxes{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	--spacing: 30px;
+	padding: 0 0 0 calc(var(--spacing) * 0.5);
+}
+.mission_vision_values .inner_container .lower_sec .right_pane .info_boxes .info_box{
+	width: calc(33.33% - var(--spacing));
+	padding: 0 0 calc(1.5 * var(--spacing));
 }

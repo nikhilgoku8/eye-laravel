@@ -1803,3 +1803,96 @@ footer .lower_sec{
 	width: calc(33.33% - var(--spacing));
 	padding: 0 0 calc(1.5 * var(--spacing));
 }
+
+/*founders*/
+.founders{
+	padding: 0 0 50px 0;
+}
+.founders .info_box{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 25px 0;
+}
+.founders .info_box:nth-child(even){
+	flex-direction: row-reverse;
+}
+.founders .info_box .img_box{
+	width: 37%;
+}
+.founders .info_box .text_box{
+	width: 63%;
+	padding: 0 0 0 50px;
+}
+.founders .info_box:nth-child(even) .text_box{
+	flex-direction: row-reverse;
+	padding: 0 50px 0 0;
+}
+
+
+/*added_feature_boxes*/
+.added_feature_boxes{
+	background-color: var(--purple);
+	padding: 75px 0 25px;
+}
+.added_feature_boxes .inner_container{
+	display: flex;
+	flex-wrap: wrap;
+	/*align-items: flex-start;*/
+	/*justify-content: space-around;*/
+}
+.added_feature_boxes .inner_container .info_box{
+	width: 33.33%;
+	text-align: center;
+	padding: 0 0 50px 0;
+}
+.added_feature_boxes .inner_container .info_box .icon{
+	margin: auto auto 20px auto;
+	max-height: 80px;
+	max-width: 80px;
+	text-align: center;
+}
+.added_feature_boxes .inner_container .info_box .icon img{
+	transition: all 0.3s;
+}
+.added_feature_boxes .inner_container .info_box:hover .icon img{
+	filter: brightness(0) saturate(100%) invert(86%) sepia(35%) saturate(505%) hue-rotate(26deg) brightness(95%) contrast(94%);
+}
+.added_feature_boxes .inner_container .info_box .text{
+	font-size: 18px;
+	color: #ffffff;
+	text-align: center;
+	transition: all 0.3s;
+}
+.added_feature_boxes .inner_container .info_box:hover .text{
+	color: var(--green);
+}
+
+/*why_trust*/
+.why_trust{
+	padding: 60px 0;
+}
+.why_trust .info_boxes{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.why_trust .info_boxes .info_box{
+	width: calc(50% - 10px);
+	padding: 30px;
+	margin: 0 0 20px;
+	background-color: var(--light-green);
+	transition: all 0.3s;
+}
+.why_trust .info_boxes .info_box:hover{
+	background-color: var(--purple);
+}
+.why_trust .info_boxes .info_box .text{
+	color: var(--purple);
+	text-align: center;
+	font-size: 20px;
+	font-weight: 400;
+	transition: all 0.3s;
+}
+.why_trust .info_boxes .info_box:hover .text{
+	color: var(--light-green);
+}

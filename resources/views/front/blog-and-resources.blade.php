@@ -26,7 +26,7 @@
 
 @include('front.includes.features')
 
-<div class="resources_wrapper">
+<!-- <div class="resources_wrapper">
     <div class="container">
         <div class="inner_container">
             
@@ -60,18 +60,10 @@
 
         </div>
     </div>
-</div>
+</div> -->
 <!-- resources_wrapper -->
 
-<div class="big_video">
-    <div class="video_wrapper">
-        <video muted autoplay loop>
-            <source src="{{ asset('front/videos/sample.mp4') }}" type="video/mp4">
-        </video>
-    </div>
-</div>
-<!-- big_video -->
-
+@if(!empty($blogs) && count($blogs) > 0)
 <div class="blogs_wrapper">
     <div class="container">
         <div class="inner_container">
@@ -79,7 +71,25 @@
             <div class="heading">Blogs</div>
 
             <div class="blog_boxes">
-                <div class="blog_box">
+                @foreach($blogs as $blog)
+                <a href="{{ url('p/'.$blog->slug) }}" class="blog_box">
+                    <div class="img_box">
+                        <img src="{{ asset('uploads/blogs/'.$blog->image_file) }}">
+                    </div>
+                    <div class="text_box">
+                        <div class="blog_title">{{$blog->title}}</div>
+                        <div class="description">
+                            {!! Str::limit($blog->description, 100) !!}
+                        </div>
+                        <!-- <p>Ut cupidatat fugiat ullamco dolore tempor minim ut veniam elit officia eiusmod non sunt fugiat est.</p> -->
+                        <div class="lower_txt">
+                            <div class="hospital_name">Orbit Eye Hospital</div>
+                            <div class="time">{{ \Carbon\Carbon::parse($blog->blog_date)->format('d-M-Y') }}</div>
+                        </div>
+                    </div>
+                </a>
+                @endforeach
+                <!-- <div class="blog_box">
                     <div class="img_box">
                         <img src="{{ asset('front/images/blogs/1.png') }}">
                     </div>
@@ -91,20 +101,7 @@
                             <div class="time">5 days, 21 hours ago</div>
                         </div>
                     </div>
-                </div>
-                <div class="blog_box">
-                    <div class="img_box">
-                        <img src="{{ asset('front/images/blogs/1.png') }}">
-                    </div>
-                    <div class="text_box">
-                        <div class="blog_title">See the doctor for different ways</div>
-                        <p>Ut cupidatat fugiat ullamco dolore tempor minim ut veniam elit officia eiusmod non sunt fugiat est.</p>
-                        <div class="lower_txt">
-                            <div class="hospital_name">Orbit Eye Hospital</div>
-                            <div class="time">5 days, 21 hours ago</div>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
             <div class="btn_wrapper center">
                 <a href="{{ route('blogs') }}" class="purple_hollow_btn">More Blogs</a>
@@ -114,7 +111,17 @@
     </div>
 </div>
 <!-- blogs_wrapper -->
+@endif
 
+
+<div class="big_video">
+    <div class="video_wrapper">
+        <video muted autoplay loop>
+            <source src="{{ asset('front/videos/sample.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+</div>
+<!-- big_video -->
 
 @include('front.includes.get-in-touch')
 

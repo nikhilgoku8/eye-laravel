@@ -18,13 +18,14 @@
                         <li>About Us</li>
                         <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
                         <li><a href="{{ route('team') }}">Team</a></li>
-                        <li><a href="{{ route('blog-and-resources') }}">Blog and Resources</a></li>
-                        <!-- <li><a href="{{ route('blogs') }}">Blogs</a></li> -->
+                        <!-- <li><a href="{{ route('blog-and-resources') }}">Blog and Resources</a></li> -->
+                        <li><a href="{{ route('blogs') }}">Blogs</a></li>
                         <li><a href="{{ route('eye-diseases') }}">Eye Diseases</a></li>
                         <li><a href="{{ route('faqs') }}">Faqs</a></li>
                         <li><a href="{{ route('info') }}">Info</a></li>
                         <li><a href="{{ route('surgeries') }}">Surgeries</a></li>
                         <li><a href="{{ route('testimonials') }}">Testimonials</a></li>
+                        <li><a href="{{ route('gallery') }}">Gallery</a></li>
                     </ul>
                 </div>
                 <div class="footer_box">

@@ -39,12 +39,14 @@ Route::get('/appointment/thank-you', [HomeController::class, 'appointment_thank_
 Route::post('/get-doctor-by-specialization', [HomeController::class, 'getDoctorBySpecialization'])->name('get-doctor-by-specialization');
 Route::post('/get-time-slots', [HomeController::class, 'getTimeSlots'])->name('get-time-slots');
 
+Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
+
 $categories = BlogCategory::pluck('slug')->implode('|');
 if ($categories) {
     Route::get('blogs/{category}', [HomeController::class, 'blogs_category'])
         ->where('category', $categories);
 } else {
-    Route::get('blogs/{category}', [HomeController::class, 'blogs_category']);
+    Route::get('blogs', [HomeController::class, 'blogs_category']);
 }
 
 $posts = BlogPost::pluck('slug')->implode('|');

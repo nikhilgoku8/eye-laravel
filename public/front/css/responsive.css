@@ -661,6 +661,92 @@ footer .upper_sec .inner_container .footer_box{
 	width: 100%;
 }
 
+.our_story .inner_container .img_box{
+	width: 100%;
+}
+.our_story .inner_container .text_box{
+	width: 100%;
+	padding: 20px 5vw;
+}
+.mission_vision_values .container{
+	padding: 0;
+}
+.mission_vision_values .inner_container .upper_sec .pane{
+	width: 100%;
+	padding: 20px;
+	margin: 0 0 20px;
+}
+.mission_vision_values .inner_container .lower_sec{
+	padding: 20px;
+}
+.mission_vision_values .inner_container .lower_sec .left_pane{
+	width: 100%;
+}
+.mission_vision_values .inner_container .lower_sec .right_pane{
+	width: 100%;
+}
+.mission_vision_values .inner_container .lower_sec .right_pane .info_boxes{
+	padding: 0;
+}
+.mission_vision_values .inner_container .lower_sec .right_pane .info_boxes .info_box{
+	width: unset;
+}
+.founders .container{
+	padding: 0;
+}
+.founders .info_box .img_box{
+	width: 100%;
+}
+.founders .info_box .text_box{
+	width: 100%;
+	padding: 20px 0 0;
+}
+.founders .info_box:nth-child(even) .text_box{
+	width: 100%;
+	padding: 20px 0 0;
+}
+
+.added_feature_boxes{
+	padding: 40px 0 20px;
+}
+.added_feature_boxes .inner_container{
+	flex-wrap: wrap;
+}
+.added_feature_boxes .inner_container .info_box{
+	width: 50%;
+	padding: 0 15px 30px;
+}
+.added_feature_boxes .inner_container .info_box .icon{
+	width: 50%;
+	margin: auto;
+	height: unset;
+	padding: 0 0 15px 0;
+}
+.added_feature_boxes .inner_container .info_box .text {
+    font-size: 14px;
+}
+.why_trust .info_boxes .info_box{
+	width: 100%;
+}
+.why_trust .info_boxes .info_box .text br{
+	display: none;
+}
+
+
+.single_blog_page .inner_container{
+	padding: 20px 0 40px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 }
 /* Smartphones (landscape) ----------- */

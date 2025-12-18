@@ -10,6 +10,8 @@ use App\Models\Specialization;
 use App\Models\Doctor;
 use App\Models\TimeSlot;
 use App\Models\Appointment;
+use App\Models\BlogPost;
+use App\Models\BlogCategory;
 use Mail;
 use Carbon\Carbon;
 use App\Mail\OTPMail;
@@ -42,11 +44,15 @@ class HomeController extends Controller
             'meta_title' => "Blog and Resources | Eye Hospital",
             'meta_description' => "Blog and Resources | Eye Hospital",
         ];
+
+        $data['blogs'] = BlogPost::orderByDesc('blog_date')->limit(2)->get();
+
+        // dd($data['blogs']);
         
         return view('front.blog-and-resources', $data);
     }
 
-    public function blogs()
+    public function blogs($slug = null)
     {
         $data = [
             'meta_title' => "Blogs | Eye Hospital",
@@ -54,6 +60,17 @@ class HomeController extends Controller
         ];
         
         return view('front.blogs', $data);
+    }
+
+    public function blog_post($slug)
+    {
+        $data['result'] = BlogPost::where('slug', $slug)->first();
+        $data['meta_title'] = $data['result']->meta_title;
+        $data['meta_description'] = $data['result']->meta_description;
+        $data['relatedBlogs'] = BlogPost::where('category_id', $data['result']->category_id)->get();
+        $data['otherBlogsCategories'] = BlogCategory::where('id', '!=', $data['result']->category_id)->get();
+        
+        return view('front.blog-post', $data);
     }
 
     public function contact_us()
@@ -134,6 +151,16 @@ class HomeController extends Controller
         ];
         
         return view('front.testimonials', $data);
+    }
+
+    public function gallery()
+    {
+        $data = [
+            'meta_title' => "Gallery | Eye Hospital",
+            'meta_description' => "Gallery | Eye Hospital",
+        ];
+        
+        return view('front.gallery', $data);
     }
 
     public function enquiry_thank_you()

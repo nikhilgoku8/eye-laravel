@@ -5,8 +5,13 @@
 <div class="services_page">
 
 <div class="hero">
-    <div class="img_box">
-        <img src="{{ asset('front/images/banners/services.jpg') }}">
+    <div class="hero_image_slider owl-carousel owl-theme">
+        <div class="img_box">
+            <img src="{{ asset('front/images/banners/services.jpg') }}">
+        </div>
+        <div class="img_box">
+            <img src="{{ asset('front/images/banners/services-2.png') }}">
+        </div>
     </div>
     <div class="text_overlay">
         <div class="inner_container">

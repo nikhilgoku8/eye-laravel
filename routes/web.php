@@ -23,7 +23,7 @@ use App\Models\BlogPost;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about-us', [HomeController::class, 'about_us'])->name('about-us');
 Route::get('/blog-and-resources', [HomeController::class, 'blog_and_resources'])->name('blog-and-resources');
-Route::get('/blogs', [HomeController::class, 'blogs'])->name('blogs');
+// Route::get('/blogs', [HomeController::class, 'blogs'])->name('blogs');
 Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
 Route::get('/eye-diseases', [HomeController::class, 'eye_diseases'])->name('eye-diseases');
 Route::get('/faqs', [HomeController::class, 'faqs'])->name('faqs');
@@ -41,13 +41,13 @@ Route::post('/get-time-slots', [HomeController::class, 'getTimeSlots'])->name('g
 
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery');
 
-$categories = BlogCategory::pluck('slug')->implode('|');
-if ($categories) {
-    Route::get('blogs/{category}', [HomeController::class, 'blogs_category'])
-        ->where('category', $categories);
-} else {
-    Route::get('blogs', [HomeController::class, 'blogs_category']);
-}
+// $categories = BlogCategory::pluck('slug')->implode('|');
+// if ($categories) {
+//     Route::get('blogs/{category}', [HomeController::class, 'blogs'])
+//         ->where('category', $categories)->name('blogs');
+// } else {
+    Route::get('blogs/{category?}', [HomeController::class, 'blogs'])->name('blogs');
+// }
 
 $posts = BlogPost::pluck('slug')->implode('|');
 if ($posts) {

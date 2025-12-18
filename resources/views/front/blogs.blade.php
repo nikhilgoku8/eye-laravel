@@ -45,36 +45,41 @@
         <div class="inner_container">
             
             <div class="left_pane">
-                <div class="blog_boxes">
-                    <?php for ($i=0; $i < 6; $i++) { ?>
-                        <div class="blog_box">
-                            <div class="img_box">
-                                <img src="{{ asset('front/images/blogs/1.png') }}">
-                            </div>
-                            <div class="text_box">
-                                <div class="blog_title">See the doctor for different ways</div>
-                                <div class="description">
-                                    <p>Ut cupidatat fugiat ullamco dolore tempor minim ut veniam elit officia eiusmod non sunt fugiat est.</p>
+                @if(!empty($blogs) && count($blogs) > 0)
+                    <div class="blog_boxes">
+                        @foreach($blogs as $blog)
+                            <a href="{{ url('p/'.$blog->slug) }}" class="blog_box">
+                                <div class="img_box">
+                                    <img src="{{ asset('uploads/blogs/'.$blog->image_file) }}">
                                 </div>
-                                <div class="lower_txt">
-                                    <div class="hospital_name">Orbit Eye Hospital</div>
-                                    <div class="time">5 days, 21 hours ago</div>
+                                <div class="text_box">
+                                    <div class="blog_title">{{$blog->title}}</div>
+                                    <div class="description">
+                                        {!! Str::limit($blog->description, 100) !!}
+                                    </div>
+                                    <div class="lower_txt">
+                                        <div class="hospital_name">Orbit Eye Hospital</div>
+                                        <div class="time">{{ \Carbon\Carbon::parse($blog->blog_date)->format('d-M-Y') }}</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    <?php } ?>
-                </div>
-                <div class="table_pagination">
-                    <div class="clr"></div>
-                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                    <div class="table_pagination">
+                        {{$blogs->links()}}
+                    </div>
+                @else
+                NO BLOGS
+                @endif
             </div>
             <div class="right_pane">
+                @if(!empty($blogCategories) && count($blogCategories) > 0)
                 <ul class="blog_categories">
-                    <li><a href="#">Bob</a></li>
-                    <li><a href="#">Dante</a></li>
-                    <li><a href="#">Randall</a></li>
-                    <li><a href="#">Jay</a></li>
+                    @foreach($blogCategories as $category)
+                        <li class="@if(!empty($currentCategory) && ($category->slug == $currentCategory->slug)) active @endif"><a href="{{ url('blogs/'.$category->slug) }}">{{$category->title}}</a></li>
+                    @endforeach
                 </ul>
+                @endif
             </div>
 
         </div>

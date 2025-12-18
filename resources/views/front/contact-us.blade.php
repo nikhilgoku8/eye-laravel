@@ -44,7 +44,7 @@
             <div class="three_boxes">
                 <div class="info_box">
                     <div class="icon">
-                        <img src="https://placehold.co/100x100/000000/FFF/png">
+                        <img src="{{ asset('front/images/icons/call.png') }}">
                     </div>
                     <div class="text_box">
                         <a href="#">+91 00000 00000</a>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="info_box">
                     <div class="icon">
-                        <img src="https://placehold.co/100x100/000000/FFF/png">
+                        <img src="{{ asset('front/images/icons/mail.png') }}">
                     </div>
                     <div class="text_box">
                         <a href="mailto:contact@orbitshealth.com">contact@orbitshealth.com</a>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="info_box">
                     <div class="icon">
-                        <img src="https://placehold.co/100x100/000000/FFF/png">
+                        <img src="{{ asset('front/images/icons/marker.png') }}">
                     </div>
                     <div class="text_box">
                         <p>Mumbai Suburbs, <br>Maharashtra, India</p>

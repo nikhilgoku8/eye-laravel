@@ -58,6 +58,16 @@ class HomeController extends Controller
             'meta_title' => "Blogs | Eye Hospital",
             'meta_description' => "Blogs | Eye Hospital",
         ];
+        $data['blogCategories'] = BlogCategory::all();
+
+        if ($slug === null) {
+            // Show all blogs
+            $data['blogs'] = BlogPost::orderByDesc('blog_date')->paginate(6);
+        } else {
+            // Show blogs by category
+            $data['currentCategory'] = BlogCategory::where('slug', $slug)->first();
+            $data['blogs'] = BlogPost::where('category_id', $data['currentCategory']->id)->orderByDesc('blog_date')->paginate(6);
+        }
         
         return view('front.blogs', $data);
     }

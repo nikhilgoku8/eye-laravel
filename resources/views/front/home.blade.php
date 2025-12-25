@@ -15,8 +15,8 @@
             </div>
             <div class="banner_title">Mumbai’s Premier Eye Care Center Since 2006</div>
             <div class="banner_btns">
-                <a href="#" class="purple_hollow_btn">Book An Appoinment</a>
-                <a href="#" class="purple_hollow_btn">Call emergency care</a>
+                <a class="purple_hollow_btn request_callback">Book An Appoinment</a>
+                <a href="tel:+919820166630" class="purple_hollow_btn">Call emergency care</a>
             </div>
         </div>
     </div>
@@ -166,13 +166,13 @@
 </div>
 <!-- services -->
 
-<div class="big_video">
+<!-- <div class="big_video">
     <div class="video_wrapper">
         <video muted autoplay loop>
             <source src="{{ asset('front/videos/sample.mp4') }}" type="video/mp4">
         </video>
     </div>
-</div>
+</div> -->
 <!-- big_video -->
 
 <div class="best_team">
@@ -218,7 +218,7 @@
 </div>
 <!-- best_team -->
 
-@include('front.includes.testimonials')
+@include('front.includes.video-testimonials')
 
 <div class="blog_section">
     <div class="container">
@@ -236,38 +236,31 @@
                             <div class="inner_box">
                                 <div class="text_1">blog post</div>
                                 <div class="text_2">Explore the trending<br> news from the hosptal</div>
-                                <div class="text_3">all post</div>
+                                <a href="{{ route('blogs') }}" class="text_3">all post</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="right_pane">
-                    <div class="blog_box">
-                        <div class="img_box">
-                            <img src="{{ asset('front/images/blogs/1.png') }}">
-                        </div>
-                        <div class="text_box">
-                            <div class="blog_title">See the doctor for different ways</div>
-                            <p>Ut cupidatat fugiat ullamco dolore tempor minim ut veniam elit officia eiusmod non sunt fugiat est.</p>
-                            <div class="lower_txt">
-                                <div class="hospital_name">Orbit Eye Hospital</div>
-                                <div class="time">5 days, 21 hours ago</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog_box">
-                        <div class="img_box">
-                            <img src="{{ asset('front/images/blogs/2.png') }}">
-                        </div>
-                        <div class="text_box">
-                            <div class="blog_title">See the doctor for different ways</div>
-                            <p>Elit culpa nulla esse dolore in ullamco magna laboris laborum duis mollit est.</p>
-                            <div class="lower_txt">
-                                <div class="hospital_name">Orbit Eye Hospital</div>
-                                <div class="time">5 days, 21 hours ago</div>
-                            </div>
-                        </div>
-                    </div>
+                    @if(!empty($blogs) && count($blogs) > 0)
+                        @foreach($blogs as $blog)
+                            <a href="{{ url('p/'.$blog->slug) }}" class="blog_box">
+                                <div class="img_box">
+                                    <img src="{{ asset('uploads/blogs/'.$blog->image_file) }}">
+                                </div>
+                                <div class="text_box">
+                                    <div class="blog_title">{{$blog->title}}</div>
+                                    <div class="description">
+                                        {!! Str::limit($blog->description, 100) !!}
+                                    </div>
+                                    <div class="lower_txt">
+                                        <div class="hospital_name">Orbit Eye Hospital</div>
+                                        <div class="time">{{ \Carbon\Carbon::parse($blog->blog_date)->format('d-M-Y') }}</div>
+                                    </div>
+                                </div>
+                            </a>
+                        @endforeach
+                    @endif
                 </div>
             </div>
             <div class="btn_wrapper center">

@@ -6,30 +6,46 @@
 
 <div class="hero">
     <div class="hero_image_slider owl-carousel owl-theme">
-        <div class="img_box">
-            <img src="{{ asset('front/images/banners/services.jpg') }}">
-        </div>
-        <div class="img_box">
-            <img src="{{ asset('front/images/banners/services-2.png') }}">
-        </div>
-    </div>
-    <div class="text_overlay">
-        <div class="inner_container">
-            <div class="banner_heading">
-                <span>your eyes</span>
-                <br>
-                <span class="bold">we care</span>
+        <div class="item_box">
+            <div class="img_box">
+                <img src="{{ asset('front/images/banners/services.jpg') }}">
             </div>
-            <div class="banner_title">Mumbai’s Premier Eye Care Center Since 2006</div>
-            <div class="banner_btns">
-                <a href="#" class="purple_hollow_btn">Book An Appoinment</a>
-                <a href="#" class="purple_hollow_btn">Call emergency care</a>
+            <div class="text_overlay">
+                <div class="inner_container">
+                    <div class="banner_heading">
+                        <span>Our</span>
+                        <br>
+                        <span class="bold">Services</span>
+                    </div>
+                    <div class="banner_title">Mumbai’s Premier Eye Care Center Since 2006</div>
+                    <div class="banner_btns">
+                        <a class="purple_hollow_btn request_callback">Book An Appoinment</a>
+                        <a href="tel:+919820166630" class="purple_hollow_btn">Call emergency care</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item_box">
+            <div class="img_box">
+                <img src="{{ asset('front/images/banners/services-2.png') }}">
+            </div>
+            <div class="text_overlay">
+                <div class="inner_container">
+                    <div class="banner_heading">
+                        <span>Let your eyes</span>
+                        <br>
+                        <span class="bold">Smile</span>
+                    </div>
+                    <div class="banner_title">Small Incision Lenticule Extraction</div>
+                    <div class="banner_btns">
+                        <a class="purple_hollow_btn request_callback">Book An Appoinment</a>
+                        <a href="tel:+919820166630" class="purple_hollow_btn">Call emergency care</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-@include('front.includes.features')
 
 <div class="about_hospital main_services">
     <div class="container">

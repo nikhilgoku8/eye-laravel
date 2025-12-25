@@ -15,35 +15,54 @@
                     <div class="title">quick links</div>
                     <ul class="quick_links">
                         <li><a href="{{ route('services') }}">Services</a></li>
-                        <li>About Us</li>
                         <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                        <li><a href="{{ route('eye-diseases') }}">Eye Diseases</a></li>
+                        <li><a href="{{ route('surgeries') }}">Surgeries</a></li>
+                        <li><a href="{{ route('info') }}">Our Process</a></li>
+                    </ul>
+                </div>
+                <div class="footer_box">
+                    <div class="title">Other</div>
+                    <ul class="quick_links">
+                        <li><a href="{{ route('about-us') }}">About Us</a></li>
                         <li><a href="{{ route('team') }}">Team</a></li>
                         <!-- <li><a href="{{ route('blog-and-resources') }}">Blog and Resources</a></li> -->
                         <li><a href="{{ route('blogs') }}">Blogs</a></li>
-                        <li><a href="{{ route('eye-diseases') }}">Eye Diseases</a></li>
                         <li><a href="{{ route('faqs') }}">Faqs</a></li>
-                        <li><a href="{{ route('info') }}">Info</a></li>
-                        <li><a href="{{ route('surgeries') }}">Surgeries</a></li>
                         <li><a href="{{ route('testimonials') }}">Testimonials</a></li>
                         <li><a href="{{ route('gallery') }}">Gallery</a></li>
                     </ul>
                 </div>
                 <div class="footer_box">
-                    <div class="subscribe_wrapper">
-                        <p>Stay updated on new projects and offers </p>
-                        <div class="subscribe_input_wrapper">
-                            <input type="text" name="email" placeholder="Email Id">
-                            <button type="submit">Subscribe Now</button>
-                        </div>
-                    </div>
-                    <ul class="social_links">
-                        <li><a href="#"><img src="{{ asset('front/images/icons/instagram.png') }}"></a></li>
-                        <li><a href="#"><img src="{{ asset('front/images/icons/facebook.png') }}"></a></li>
-                        <li><a href="#"><img src="{{ asset('front/images/icons/twitter.png') }}"></a></li>
-                        <li><a href="#"><img src="{{ asset('front/images/icons/youtube.png') }}"></a></li>
-                        <li><a href="#"><img src="{{ asset('front/images/icons/linkedin.png') }}"></a></li>
+                    <div class="title">Reach Us</div>
+                    <ul class="quick_links">
+                        <li><p><strong>Address</strong><br>
+                        1st floor, W, Aftab Classic,<br> Swami Vivekananda Rd,<br> opp. City Hospital, Raj Nagar,<br> Gautam Nagar, Jogeshwari West,<br> Mumbai, Maharashtra 400102
+                        </p></li>
+                        <li><p><strong>Email</strong><br>
+                        <a href="mailto:contact@orbitshealth.com">contact@orbitshealth.com</a>
+                        </p></li>
+                        <li><p><strong>Call</strong><br>
+                        <a href="tel:098201 66630">098201 66630</a>
+                        </p></li>
                     </ul>
                 </div>
+                <!--<div class="footer_box">-->
+                <!--    <div class="subscribe_wrapper">-->
+                <!--        <p>Stay updated on new projects and offers </p>-->
+                <!--        <div class="subscribe_input_wrapper">-->
+                <!--            <input type="text" name="email" placeholder="Email Id">-->
+                <!--            <button type="submit">Subscribe Now</button>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--    <ul class="social_links">-->
+                <!--        <li><a href="#"><img src="{{ asset('front/images/icons/instagram.png') }}"></a></li>-->
+                <!--        <li><a href="#"><img src="{{ asset('front/images/icons/facebook.png') }}"></a></li>-->
+                <!--        <li><a href="#"><img src="{{ asset('front/images/icons/twitter.png') }}"></a></li>-->
+                <!--        <li><a href="#"><img src="{{ asset('front/images/icons/youtube.png') }}"></a></li>-->
+                <!--        <li><a href="#"><img src="{{ asset('front/images/icons/linkedin.png') }}"></a></li>-->
+                <!--    </ul>-->
+                <!--</div>-->
 
             </div>
         </div>

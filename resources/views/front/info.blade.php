@@ -11,20 +11,20 @@
     <div class="text_overlay">
         <div class="inner_container">
             <div class="banner_heading">
-                <span>your eyes</span>
+                <span>Our</span>
                 <br>
-                <span class="bold">we care</span>
+                <span class="bold">Process</span>
             </div>
             <div class="banner_title">Mumbai’s Premier Eye Care Center Since 2006</div>
             <div class="banner_btns">
-                <a href="#" class="purple_hollow_btn">Book An Appoinment</a>
-                <a href="#" class="purple_hollow_btn">Call emergency care</a>
+                <a class="purple_hollow_btn request_callback">Book An Appoinment</a>
+                <a href="tel:+919820166630" class="purple_hollow_btn">Call emergency care</a>
             </div>
         </div>
     </div>
 </div>
 
-@include('front.includes.features')
+<!--@include('front.includes.features')-->
 
 <div class="about_hospital grey_bg">
     <div class="container">

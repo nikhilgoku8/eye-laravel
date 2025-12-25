@@ -24,6 +24,7 @@ class HomeController extends Controller
             'meta_title' => "Eye Hospital",
             'meta_description' => "Eye Hospital",
         ];
+        $data['blogs'] = BlogPost::orderByDesc('blog_date')->limit(2)->get();
         
         return view('front.home', $data);
     }

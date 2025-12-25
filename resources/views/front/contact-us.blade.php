@@ -11,14 +11,14 @@
     <div class="text_overlay">
         <div class="inner_container">
             <div class="banner_heading">
-                <span>your eyes</span>
+                <span>Connect</span>
                 <br>
-                <span class="bold">we care</span>
+                <span class="bold">With Us</span>
             </div>
             <div class="banner_title">Mumbai’s Premier Eye Care Center Since 2006</div>
             <div class="banner_btns">
-                <a href="#" class="purple_hollow_btn">Book An Appoinment</a>
-                <a href="#" class="purple_hollow_btn">Call emergency care</a>
+                <a class="purple_hollow_btn request_callback">Book An Appoinment</a>
+                <a href="tel:+919820166630" class="purple_hollow_btn">Call emergency care</a>
             </div>
         </div>
     </div>
@@ -47,9 +47,7 @@
                         <img src="{{ asset('front/images/icons/call.png') }}">
                     </div>
                     <div class="text_box">
-                        <a href="#">+91 00000 00000</a>
-                        <br>
-                        <a href="#">+91 00000 00000</a>
+                        <a href="#">+91 98201 66630</a>
                     </div>
                 </div>
                 <div class="info_box">
@@ -65,7 +63,7 @@
                         <img src="{{ asset('front/images/icons/marker.png') }}">
                     </div>
                     <div class="text_box">
-                        <p>Mumbai Suburbs, <br>Maharashtra, India</p>
+                        <p>1st floor, W, Aftab Classic, Swami Vivekananda Rd, opp. City Hospital, Raj Nagar, Gautam Nagar, Jogeshwari West, Mumbai, Maharashtra 400102</p>
                     </div>
                 </div>
             </div>

@@ -738,7 +738,14 @@ footer .upper_sec .inner_container .footer_box{
 }
 
 
-
+.gallery_page .container{
+	padding: 0;
+}
+.gallery_page .gallery_images .img_box{
+	width: calc(50% - 5px);
+	padding: 50% 0 0 0;
+	margin: 0 0 10px;
+}
 
 
 

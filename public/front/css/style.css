@@ -628,6 +628,12 @@ header .inner_container{
 	text-align: center;
 	margin: auto;
 }
+.testimonials .testimonial_slider .item_box .testimonial_video a{
+	width: 100%;
+}
+.testimonials .testimonial_slider .item_box .testimonial_video a img{
+	width: 100%;
+}
 .testimonials .testimonial_slider .item_box .description{
 	font-size: 18px;
 	line-height: 1.3em;

@@ -226,7 +226,9 @@ header .inner_container{
     padding: 10px 25px;
     border-radius: 50px;
     border: 2px solid var(--purple);
+    outline: none;
     color: var(--purple);
+    background-color: transparent;
 }
 
 .purple_filled_btn{
@@ -503,7 +505,7 @@ header .inner_container{
 	padding: 100px 0 85px 0;
 }
 .best_team .inner_container .left_pane{
-	width: 45%;
+	width: 40%;
 }
 .best_team .inner_container .left_pane .text_box{
 	font-size: 40px;
@@ -532,7 +534,7 @@ header .inner_container{
     font-weight: 700;
 }
 .best_team .inner_container .right_pane{
-	width: 55%;
+	width: 60%;
 }
 .best_team .inner_container .right_pane .team_banner .item_box{
 	display: flex;
@@ -560,6 +562,7 @@ header .inner_container{
 }
 .best_team .inner_container .right_pane .team_banner .item_box .text_box .team_title{
 	font-size: 50px;
+	line-height: 1.2;
 	font-weight: 700;
 	color: var(--green);
 	text-transform: uppercase;
@@ -1203,6 +1206,9 @@ footer .lower_sec{
 	width: 56%;
 	padding: 36% 0 0 0;
 	position: relative;
+}
+.img_txt_box_wrapper .info_boxes .info_box.optometrists .img_box{
+	padding: 50% 0 0 0;
 }
 .img_txt_box_wrapper .info_boxes .info_box .img_box img{
 	position: absolute;

@@ -57,8 +57,8 @@
                     <table>
                         <tbody>
                             <tr>
-                                <th class="col-sm-5">Title</th>
-                                <th class="col-sm-5">Doctors</th>
+                                <th class="col-sm-4">Title</th>
+                                <th class="col-sm-4">Doctors</th>
                                 <th class="col-sm-1">Created at</th>
                                 <th class="col-sm-1">Updated at</th>
                                 <th class="col-sm-2 center">ACTION</th>

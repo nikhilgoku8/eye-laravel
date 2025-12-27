@@ -18,7 +18,7 @@
             <div class="banner_title">Mumbai’s Premier Eye Care Center Since 2006</div>
             <div class="banner_btns">
                 <a class="purple_hollow_btn request_callback">Book An Appoinment</a>
-                <a href="tel:+919820166630" class="purple_hollow_btn">Call emergency care</a>
+                <a href="tel:+919820504546" class="purple_hollow_btn">Call emergency care</a>
             </div>
         </div>
     </div>
@@ -52,9 +52,10 @@
                             <span>Refractive </span>
                             <span class="light_txt">Surgeries</span>
                         </div>
-                        <p class="description">LASIK, PRK, SMILE, ICL for correction of myopia, hyperopia, and astigmatism</p>
+                        <!-- <p class="description">LASIK, PRK, SMILE, ICL for correction of myopia, hyperopia, and astigmatism</p> -->
+                        <p class="description">Blade lasik, Blade less lasik, Smile </p>
                         <div class="btn_wrapper">
-                            <a href="#" class="purple_hollow_btn">Make an appointment</a>
+                            <button class="purple_hollow_btn request_callback">Make an appointment</button>
                         </div>
                     </div>
                     <div class="img_box">
@@ -69,7 +70,7 @@
                         </div>
                         <p class="description">Phacoemulsification with premium intraocular lenses including multifocal, toric, and accommodating types</p>
                         <div class="btn_wrapper">
-                            <a href="#" class="purple_hollow_btn">Make an appointment</a>
+                            <button class="purple_hollow_btn request_callback">Make an appointment</button>
                         </div>
                     </div>
                     <div class="img_box">
@@ -84,7 +85,7 @@
                         </div>
                         <p class="description">Vitrectomy, retinal detachment repair, laser photocoagulation, intravitreal injections.</p>
                         <div class="btn_wrapper">
-                            <a href="#" class="purple_hollow_btn">Make an appointment</a>
+                            <button class="purple_hollow_btn request_callback">Make an appointment</button>
                         </div>
                     </div>
                     <div class="img_box">
@@ -99,7 +100,7 @@
                         </div>
                         <p class="description">Trabeculectomy, valve implants, laser trabeculoplasty, minimally invasive glaucoma surgeries.</p>
                         <div class="btn_wrapper">
-                            <a href="#" class="purple_hollow_btn">Make an appointment</a>
+                            <button class="purple_hollow_btn request_callback">Make an appointment</button>
                         </div>
                     </div>
                     <div class="img_box">
@@ -114,7 +115,7 @@
                         </div>
                         <p class="description">Corneal cross-linking, transplant (penetrating and lamellar), keratoplasty</p>
                         <div class="btn_wrapper">
-                            <a href="#" class="purple_hollow_btn">Make an appointment</a>
+                            <button class="purple_hollow_btn request_callback">Make an appointment</button>
                         </div>
                     </div>
                     <div class="img_box">
@@ -129,7 +130,7 @@
                         </div>
                         <p class="description">Eyelid reconstruction, ptosis repair, tear duct surgeries, orbital tumor excision.</p>
                         <div class="btn_wrapper">
-                            <a href="#" class="purple_hollow_btn">Make an appointment</a>
+                            <button class="purple_hollow_btn request_callback">Make an appointment</button>
                         </div>
                     </div>
                     <div class="img_box">

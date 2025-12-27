@@ -18,7 +18,7 @@
             <div class="banner_title">Mumbai’s Premier Eye Care Center Since 2006</div>
             <div class="banner_btns">
                 <a class="purple_hollow_btn request_callback">Book An Appoinment</a>
-                <a href="tel:+919820166630" class="purple_hollow_btn">Call emergency care</a>
+                <a href="tel:+919820504546" class="purple_hollow_btn">Call emergency care</a>
             </div>
         </div>
     </div>
@@ -53,21 +53,29 @@
                         </div>
                         <p class="description">A team of highly experienced, board-certified ophthalmologists specializing in various eye care disciplines including cataract surgery, retina, cornea, glaucoma, and pediatric ophthalmology.</p>
                         <div class="btn_wrapper">
-                            <a href="#" class="purple_hollow_btn">Make an appointment</a>
+                            <button class="purple_hollow_btn request_callback">Make an appointment</button>
                         </div>
                     </div>
                     <div class="img_box">
                         <img src="{{ asset('front/images/team/ophthalmologists.jpg') }}">
                     </div>
                 </div>
-                <div class="info_box">
+                <div class="info_box optometrists">
                     <div class="text_box">
                         <div class="surgery_title">
                             <span>Optometrists</span>
                         </div>
-                        <p class="description">Certified professionals providing comprehensive eye exams, vision correction, and pre/post-surgical evaluations</p>
+                        <div class="description">
+                            <p><b>Supriya:</b><br>
+                            Supriya Ghosh, a clinical optometrist at Orbit Eye Hospital, brings 12 years of experience, with 6 years at OEH. Holding a bachelor's from the Institute of Technology and Management (Panvel), she excels in patient eye care, from examinations to disease detection and medication advice.</p>
+                            <p><b>Yasmeen:</b><br>
+                            Yasmeen Mulani is an experienced optometrist specializing in low vision and therapeutic contact lenses, holding a clinical fellowship from LV Prasad Eye Institute. With seven years of expertise, including five years as a Consultant Optometrist and trainer at Orbit Eye Hospital, she excels in eye examinations, treatment planning, and patient counseling, particularly in surgical procedures.</p>
+                            <p><b>Veronica:</b><br>
+                            Veronica Chetty is an experienced optometrist and counsellor with over 10 years in the field of optometry. She has been associated with Orbit Eye Hospital for the past four years, where she is actively involved in patient workups for LASIK and cataract procedures. Her role includes detailed pre-operative assessments and patient counselling.</p>
+                            <!-- <p>Certified professionals providing comprehensive eye exams, vision correction, and pre/post-surgical evaluations</p> -->
+                        </div>
                         <div class="btn_wrapper">
-                            <a href="#" class="purple_hollow_btn">Make an appointment</a>
+                            <button class="purple_hollow_btn request_callback">Make an appointment</button>
                         </div>
                     </div>
                     <div class="img_box">
@@ -81,7 +89,7 @@
                         </div>
                         <p class="description">Well-trained nursing staff and technical assistants ensuring patient comfort, pre-operative preparation, and post-operative care.</p>
                         <div class="btn_wrapper">
-                            <a href="#" class="purple_hollow_btn">Make an appointment</a>
+                            <button class="purple_hollow_btn request_callback">Make an appointment</button>
                         </div>
                     </div>
                     <div class="img_box">
@@ -95,7 +103,7 @@
                         </div>
                         <p class="description">Dedicated personnel managing appointments, patient records, insurance, and customer service</p>
                         <div class="btn_wrapper">
-                            <a href="#" class="purple_hollow_btn">Make an appointment</a>
+                            <button class="purple_hollow_btn request_callback">Make an appointment</button>
                         </div>
                     </div>
                     <div class="img_box">

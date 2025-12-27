@@ -18,7 +18,7 @@
             <div class="banner_title">Mumbai’s Premier Eye Care Center Since 2006</div>
             <div class="banner_btns">
                 <a class="purple_hollow_btn request_callback">Book An Appoinment</a>
-                <a href="tel:+919820166630" class="purple_hollow_btn">Call emergency care</a>
+                <a href="tel:+919820504546" class="purple_hollow_btn">Call emergency care</a>
             </div>
         </div>
     </div>
@@ -121,7 +121,7 @@
             <!-- surgeries_boxes -->
 
             <div class="btn_wrapper center">
-                <a href="#" class="purple_hollow_btn">Make an appointment</a>
+                <button class="purple_hollow_btn request_callback">Make an appointment</button>
             </div>
 
         </div>

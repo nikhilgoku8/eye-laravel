@@ -18,7 +18,7 @@
             <div class="banner_title">Mumbai’s Premier Eye Care Center Since 2006</div>
             <div class="banner_btns">
                 <a class="purple_hollow_btn request_callback">Book An Appoinment</a>
-                <a href="tel:+919820166630" class="purple_hollow_btn">Call emergency care</a>
+                <a href="tel:+919820504546" class="purple_hollow_btn">Call emergency care</a>
             </div>
         </div>
     </div>
@@ -155,7 +155,7 @@
                 <div class="right_pane">
                     <div class="three_boxes">
 
-                        <a href="#" class="info_box">
+                        <a href="{{ asset('front/pdf/iol-master-700-biometry-for-precise-eye-measurements-for-surgery-planning.pdf') }}" target="_blank" class="info_box">
                             <div class="text_box">
                                 <p>IOL Master 700 Biometry for precise eye measurements for surgery planning </p>
                             </div>
@@ -171,7 +171,7 @@
                                 <i class="fa-solid fa-up-right-from-square"></i>
                             </div>
                         </a>
-                        <a href="#" class="info_box">
+                        <a href="{{ asset('front/pdf/optical-coherence-tomography-(oct)-for-detailed-retinal-imaging.pdf') }}" target="_blank" class="info_box">
                             <div class="text_box">
                                 <p>Optical Coherence Tomography (OCT) for detailed retinal imaging</p>
                             </div>
@@ -225,19 +225,19 @@
                     <div class="img_box">
                         <img src="{{ asset('front/images/diseases/el-90-excimer-laser-for-lasik-prk-and-refractive-corrections.png') }}">
                     </div>
-                    <div class="text_box">MEL 90 Excimer Laser for LASIK, PRK, and refractive corrections</div>
+                    <div class="text_box">SCHWIND AMARIS 500e Excimer Laser for LASIK, PRK, and refractive corrections</div>
                 </div>
                 <div class="info_box">
                     <div class="img_box">
                         <img src="{{ asset('front/images/diseases/femto-ldv-z8-femtosecond-laser-for-bladeless-surgery.png') }}">
                     </div>
-                    <div class="text_box">FEMTO LDV Z8 Femtosecond Laser for bladeless surgery</div>
+                    <div class="text_box">Visumax 500 Femtosecond Laser for bladeless surgery</div>
                 </div>
                 <div class="info_box">
                     <div class="img_box">
                         <img src="{{ asset('front/images/diseases/advanced-vitrectomy-machines-for-retinal-surgeries.png') }}">
                     </div>
-                    <div class="text_box">Advanced vitrectomy machines for retinal surgeries</div>
+                    <div class="text_box">Lumera I microscope and Zeiss Callisto for image guided surgery</div>
                 </div>
                 <div class="info_box">
                     <div class="img_box">

@@ -18,7 +18,7 @@
             <div class="banner_title">Mumbai’s Premier Eye Care Center Since 2006</div>
             <div class="banner_btns">
                 <a class="purple_hollow_btn request_callback">Book An Appoinment</a>
-                <a href="tel:+919820166630" class="purple_hollow_btn">Call emergency care</a>
+                <a href="tel:+919820504546" class="purple_hollow_btn">Call emergency care</a>
             </div>
         </div>
     </div>
@@ -47,7 +47,8 @@
                         <img src="{{ asset('front/images/icons/call.png') }}">
                     </div>
                     <div class="text_box">
-                        <a href="#">+91 98201 66630</a>
+                        <a href="tel:+918797030303">+91 8797030303</a>
+                        <a href="tel:+918797040404">+91 8797040404</a>
                     </div>
                 </div>
                 <div class="info_box">
@@ -56,6 +57,7 @@
                     </div>
                     <div class="text_box">
                         <a href="mailto:contact@orbitshealth.com">contact@orbitshealth.com</a>
+                        <a href="mailto:orbiteyehospital@gmail.com">orbiteyehospital@gmail.com</a>
                     </div>
                 </div>
                 <div class="info_box">

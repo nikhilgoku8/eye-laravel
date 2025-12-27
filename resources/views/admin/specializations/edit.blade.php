@@ -50,7 +50,7 @@
                                             @foreach($doctors as $row)
                                                 <option value="{{ $row->id }}" 
                                                     {{ isset($result) && $result->doctors->contains($row->id) ? 'selected' : '' }}
-                                                    >{{ $row->title }}</option>
+                                                    >{{ $row->name }}</option>
                                             @endforeach
                                         @endif
                                     </select>

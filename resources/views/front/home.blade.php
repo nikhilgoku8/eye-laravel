@@ -16,7 +16,7 @@
             <div class="banner_title">Mumbai’s Premier Eye Care Center Since 2006</div>
             <div class="banner_btns">
                 <a class="purple_hollow_btn request_callback">Book An Appoinment</a>
-                <a href="tel:+919820166630" class="purple_hollow_btn">Call emergency care</a>
+                <a href="tel:+919820504546" class="purple_hollow_btn">Call emergency care</a>
             </div>
         </div>
     </div>
@@ -191,15 +191,15 @@
             </div>
             <div class="right_pane">
                 <div class="team_banner owl-carousel owl-theme">
-                    <?php for ($i=0; $i < 5; $i++) {  ?>
+                    <?php //for ($i=0; $i < 5; $i++) {  ?>
                         <div class="item_box">
                             <div class="img_box">
-                                <img src="{{ asset('front/images/team/1.png') }}">
+                                <img src="{{ asset('front/images/team/dr-ashish-k-jain.jpeg') }}">
                             </div>
                             <div class="text_box">
-                                <div class="team_title">Dr. K paul</div>
-                                <div class="position">Ophthalmologist</div>
-                                <div class="description">A team of highly experienced, board-certified ophthalmologists specializing in various eye care disciplines including cataract surgery, retina, cornea, glaucoma, and pediatric ophthalmology.</div>
+                                <div class="team_title">Dr. Ashish K. Jain</div>
+                                <div class="position">Specialisation in Opthamology(DNB)</div>
+                                <div class="description">MS Ophthalmology, Vitreoretinal Surgery Fellowship; manages Diabetic Retinopathy, ARMD, Retinal Detachment.</div>
                                 <ul>
                                     <li><a href="#"><img src="{{ asset('front/images/icons/instagram.png') }}"></a></li>
                                     <li><a href="#"><img src="{{ asset('front/images/icons/facebook.png') }}"></a></li>
@@ -209,7 +209,41 @@
                                 </ul>
                             </div>
                         </div>
-                    <?php } ?>
+                        <div class="item_box">
+                            <div class="img_box">
+                                <img src="{{ asset('front/images/team/1.png') }}">
+                            </div>
+                            <div class="text_box">
+                                <div class="team_title">Dr. Rutuja Tipnis</div>
+                                <div class="position">Consultant ophthalmologist (7+ years)</div>
+                                <div class="description">MS Ophthalmology, Vitreoretinal Surgery Fellowship; manages Diabetic Retinopathy, ARMD, Retinal Detachment.</div>
+                                <ul>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/instagram.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/facebook.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/twitter.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/youtube.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/linkedin.png') }}"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item_box">
+                            <div class="img_box">
+                                <img src="{{ asset('front/images/team/dr-lakshmi-kattana.jpeg') }}">
+                            </div>
+                            <div class="text_box">
+                                <div class="team_title">Dr. Lakshmi Kattana</div>
+                                <div class="position">Ophthalmologist (15 years)</div>
+                                <div class="description">MS DNB, Cornea Fellowship; excels in Phacoemulsification, LASIK/PRK, Keratoplasty.</div>
+                                <ul>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/instagram.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/facebook.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/twitter.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/youtube.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/linkedin.png') }}"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    <?php //} ?>
                 </div>
             </div>
 

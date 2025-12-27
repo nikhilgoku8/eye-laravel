@@ -18,7 +18,7 @@
             <div class="banner_title">Mumbai’s Premier Eye Care Center Since 2006</div>
             <div class="banner_btns">
                 <a class="purple_hollow_btn request_callback">Book An Appoinment</a>
-                <a href="tel:+919820166630" class="purple_hollow_btn">Call emergency care</a>
+                <a href="tel:+919820504546" class="purple_hollow_btn">Call emergency care</a>
             </div>
         </div>
     </div>
@@ -47,10 +47,12 @@
             <div class="tabs_wrapper">
                 <div class="left_pane">
                     <ul id="tabs-nav">
-                        <li><a href="#tab1">Bob</a></li>
-                        <li><a href="#tab2">Dante</a></li>
-                        <li><a href="#tab3">Randall</a></li>
-                        <li><a href="#tab4">Jay</a></li>
+                        <li><a href="#tab1">General Eye Care</a></li>
+                        <li><a href="#tab2">Cataract</a></li>
+                        <li><a href="#tab3">Glaucoma</a></li>
+                        <li><a href="#tab4">Diabetic Retinopathy</a></li>
+                        <li><a href="#tab5">LASIK and Surgeries</a></li>
+                        <li><a href="#tab6">Appointments and Contact</a></li>
                     </ul> <!-- END tabs-nav -->
                 </div>
                 <div class="right_pane">
@@ -58,45 +60,136 @@
                         <div id="tab1" class="tab-content">
                             <div class="accordion-container">
                                 <div class="accordion-item">
-                                    <h3 class="accordion-title">Section 1 Title</h3>
+                                    <h3 class="accordion-title">How often should I get an eye examination?</h3>
                                     <div class="accordion-content">
-                                        <p>Content for section 1.</p>
+                                        <p>Adults should have comprehensive eye exams every 1-2 years, or annually if over 40, diabetic, or at risk for glaucoma; children need exams before school and periodically.</p>
                                     </div>
                                 </div>
 
                                 <div class="accordion-item">
-                                    <h3 class="accordion-title">Section 2 Title</h3>
+                                    <h3 class="accordion-title">Can children get eye exams here?</h3>
                                     <div class="accordion-content">
-                                        <p>Content for section 2.</p>
+                                        <p>Yes, Orbit Eye Hospital offers pediatric ophthalmology services, including exams for strabismus, lazy eye, and congenital issues, handled by specialists like Dr. Priyanka Vora Bapat.</p>
                                     </div>
                                 </div>
 
                                 <div class="accordion-item">
-                                    <h3 class="accordion-title">Section 3 Title</h3>
+                                    <h3 class="accordion-title">What should I expect during my first visit?</h3>
                                     <div class="accordion-content">
-                                        <p>Content for section 3.</p>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item">
-                                    <h3 class="accordion-title">Section 4 Title</h3>
-                                    <div class="accordion-content">
-                                        <p>Content for section 4.</p>
+                                        <p>Initial checks include visual acuity, eye pressure (especially for glaucoma risk), retinal photography, and lifestyle questionnaire; the full test takes about 30 minutes.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id="tab2" class="tab-content">
-                            <h2>Dante Hicks</h2>
-                            <p>"My friend here's trying to convince me that any independent contractors who were working on the uncompleted Death Star were innocent victims when it was destroyed by the Rebels."</p>
+                            <div class="accordion-container">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">What causes cataracts and who is at risk?  </h3>
+                                    <div class="accordion-content">
+                                        <p>Cataracts cloud the lens due to aging, diabetes, smoking, UV exposure, or injury; risk factors include obesity, high blood pressure, and prolonged steroid use.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">How is cataract surgery performed at Orbit Eye Hospital?</h3>
+                                    <div class="accordion-content">
+                                        <p>Using advanced Ozil phacoemulsification in a 2.2mm micro-incision, the cloudy lens is replaced with a foldable hydrophobic IOL; it’s outpatient with no stitches.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">What is the recovery process after cataract surgery?</h3>
+                                    <div class="accordion-content">
+                                        <p>Patients resume normal life the next day; vision improves quickly with negligible complications, backed by over 50,000 successful surgeries at the hospital.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div id="tab3" class="tab-content">
-                            <h2>Randall Graves</h2>
-                            <p>"In light of this lurid tale, I don't even see how you can romanticize your relationship with Caitlin. She broke your heart and inadvertently drove men to deviant lifestyles."</p>
+                            <div class="accordion-container">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">What are the early symptoms of glaucoma?  </h3>
+                                    <div class="accordion-content">
+                                        <p>Often asymptomatic early on, but signs include gradual vision loss, eye pain, halos around lights, or blurred vision; family history increases risk.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">How is glaucoma diagnosed and treated?  </h3>
+                                    <div class="accordion-content">
+                                        <p>Diagnosis via eye pressure checks, slit-lamp exams, and retinal imaging; treatments include eye drops, laser, or microsurgery to drain fluid, led by experts like Dr. Susheel Deshmukh.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">Can glaucoma be prevented or managed long-term?</h3>
+                                    <div class="accordion-content">
+                                        <p>Early detection via regular exams manages it effectively; Orbit’s glaucoma specialists use advanced techniques for over 2,000 successful surgeries.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div id="tab4" class="tab-content">
-                            <h2>Jay</h2>
-                            <p>"I don't care if she's my cousin or not, I'm gonna knock those boots again tonight."</p>
+                            <div class="accordion-container">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">How does diabetes affect eye health?  </h3>
+                                    <div class="accordion-content">
+                                        <p>High blood sugar damages retinal blood vessels, causing leakage, swelling, or abnormal growth, leading to vision loss if untreated.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">What treatments are available for diabetic retinopathy?  </h3>
+                                    <div class="accordion-content">
+                                        <p>Vitreoretinal surgery, laser therapy, or injections by specialists like Dr. Aniruddha Mahindrakar address complications such as retinal detachment.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">How often should diabetic patients get screened?  </h3>
+                                    <div class="accordion-content">
+                                        <p>Annually or more frequently based on risk; Orbit recommends detailed retinal exams during routine visits.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab5" class="tab-content">
+                            <div class="accordion-container">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">What is the typical recovery time after LASIK?</h3>
+                                    <div class="accordion-content">
+                                        <p>Most patients regain visual clarity in days, with full healing in weeks; Orbit has performed thousands with experienced surgeons.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">Who is a good candidate for LASIK surgery?</h3>
+                                    <div class="accordion-content">
+                                        <p>Adults 18+ with stable vision, healthy corneas, and no severe dry eyes; consultations assess suitability.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">Do you accept insurance for surgeries?  </h3>
+                                    <div class="accordion-content">
+                                        <p>Orbit offers affordable pricing like Rs 14,999 per eye for cataracts; contact them directly for insurance details and coverage options.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab6" class="tab-content">
+                            <div class="accordion-container">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">How do I book an appointment?</h3>
+                                    <div class="accordion-content">
+                                        <p>Book online via their website, call +91-98201 66630, or use the quick enquiry form for consultations or eye tests.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">What are your emergency care hours? </h3>
+                                    <div class="accordion-content">
+                                        <p>Emergency services are available; call the hospital at 1st Floor, Aftab Classic, SV Rd, Jogeshwari West, Mumbai.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-title">Where is Orbit Eye Hospital located in Mumbai?</h3>
+                                    <div class="accordion-content">
+                                        <p>1st Floor, W, Aftab Classic, SV Rd, opp. City Hospital, Jogeshwari West, Mumbai 400102.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

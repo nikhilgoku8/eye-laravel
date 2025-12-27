@@ -34,7 +34,7 @@
         <div class="input_box">
             <div class="error form_error form-error-specialization_id"></div>
             <select name="specialization_id" class="specialization_id">
-                <option value="">Select Department</option>
+                <option value="">Select Service</option>
                 @foreach($specializations as $row)
                     <option value="{{$row->id}}">{{$row->title}}</option>
                 @endforeach

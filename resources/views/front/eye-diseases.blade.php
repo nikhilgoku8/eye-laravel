@@ -47,7 +47,8 @@
                                 <p><b>Treatment:</b> Surgery with IOL implantation</p>
                             </div>
                             <div class="btn_wrapper">
-                                <a href="#" class="purple_hollow_btn">Book an appointment</a>
+                                <!-- <a href="#" class="purple_hollow_btn">Book an appointment</a> -->
+                                <button class="purple_hollow_btn request_callback">Book an appointment</button>
                             </div>
                         </div>
                     </div>

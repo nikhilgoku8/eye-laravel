@@ -280,7 +280,8 @@
                 </div>
             </div>
             <div class="btn_wrapper center">
-                <a href="#" class="purple_hollow_btn">Book a consultation</a>
+                <!-- <a href="#" class="purple_hollow_btn">Book a consultation</a> -->
+                <button class="purple_hollow_btn request_callback">Book a consultation</button>
             </div>
 
         </div>

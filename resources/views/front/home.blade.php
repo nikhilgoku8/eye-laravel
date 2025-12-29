@@ -86,7 +86,7 @@
             </div>
 
             <div class="btn_wrapper center">
-                <a href="#" class="purple_hollow_btn">Know more about us</a>
+                <a href="{{ route('about-us') }}" class="purple_hollow_btn">Know more about us</a>
             </div>
 
         </div>
@@ -158,7 +158,8 @@
                 </div>
             </div>
             <div class="btn_wrapper center">
-                <a href="#" class="purple_hollow_btn">Book a consultation</a>
+                <!-- <a href="#" class="purple_hollow_btn">Book a consultation</a> -->
+                <button class="purple_hollow_btn request_callback">Book a consultation</button>
             </div>
 
         </div>
@@ -250,7 +251,7 @@
                             <div class="text_box">
                                 <div class="team_title">Yasmeen Mulani</div>
                                 <div class="position">Optometrist</div>
-                                <div class="description">Lorem Ispum</div>
+                                <div class="description">A dedicated optometrist with a strong background in clinical research, Yasmeen focuses on detailed eye examinations, accurate diagnosis and customised vision solutions for every patient.</div>
                                 <ul>
                                     <li><a href="#"><img src="{{ asset('front/images/icons/instagram.png') }}"></a></li>
                                     <li><a href="#"><img src="{{ asset('front/images/icons/facebook.png') }}"></a></li>
@@ -315,7 +316,7 @@
                 </div>
             </div>
             <div class="btn_wrapper center">
-                <a href="#" class="purple_hollow_btn">Book a consultation</a>
+                <button class="purple_hollow_btn request_callback">Book a consultation</button>
             </div>
 
         </div>

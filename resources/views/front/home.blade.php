@@ -211,7 +211,7 @@
                         </div>
                         <div class="item_box">
                             <div class="img_box">
-                                <img src="{{ asset('front/images/team/1.png') }}">
+                                <img src="{{ asset('front/images/team/dr-rutuja-tipnis.jpeg') }}">
                             </div>
                             <div class="text_box">
                                 <div class="team_title">Dr. Rutuja Tipnis</div>
@@ -234,6 +234,23 @@
                                 <div class="team_title">Dr. Lakshmi Kattana</div>
                                 <div class="position">Ophthalmologist (15 years)</div>
                                 <div class="description">MS DNB, Cornea Fellowship; excels in Phacoemulsification, LASIK/PRK, Keratoplasty.</div>
+                                <ul>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/instagram.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/facebook.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/twitter.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/youtube.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/linkedin.png') }}"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item_box">
+                            <div class="img_box">
+                                <img src="{{ asset('front/images/team/yasmeen-mulani.jpeg') }}">
+                            </div>
+                            <div class="text_box">
+                                <div class="team_title">Yasmeen Mulani</div>
+                                <div class="position">Optometrist</div>
+                                <div class="description">Lorem Ispum</div>
                                 <ul>
                                     <li><a href="#"><img src="{{ asset('front/images/icons/instagram.png') }}"></a></li>
                                     <li><a href="#"><img src="{{ asset('front/images/icons/facebook.png') }}"></a></li>

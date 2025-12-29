@@ -141,6 +141,78 @@
 </div>
 <!-- light_green_boxes -->
 
+<div class="light_green_boxes">
+    <div class="container">
+        <div class="inner_container">
+            
+            <div class="heading">Cataract Surgery</div>
+
+            <div class="info_boxes">
+                <div class="info_box">
+                    <div class="text">Resume cooking, TV viewing, reading immediately.</div>
+                </div>
+                <div class="info_box">
+                    <div class="text">Get spectacle prescription after 1 week; wipe watering eyes with tissue (close eye first).</div>
+                </div>
+                <div class="info_box">
+                    <div class="text">Avoid dust, smoke, cosmetics; use one eye drop at a time (2-5 min gap); continue heart/BP/diabetes meds.</div>
+                </div>
+                <div class="info_box">
+                    <div class="text">Head bath after 7 days; wear protective glasses for 7 days.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- light_green_boxes -->
+
+<div class="light_green_boxes">
+    <div class="container">
+        <div class="inner_container">
+            
+            <div class="heading">LASIK Surgery</div>
+
+            <div class="info_boxes">
+                <div class="info_box">
+                    <div class="text">Resume cooking, TV viewing, reading immediately; wipe watering eyes with tissue (close eye first).</div>
+                </div>
+                <div class="info_box">
+                    <div class="text">Avoid dust, smoke, cosmetics; use one eye drop at a time (2-5 min gap).</div>
+                </div>
+                <div class="info_box">
+                    <div class="text">Head bath after 5 days; wear protective glasses for 5 days.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- light_green_boxes -->
+
+<div class="light_green_boxes">
+    <div class="container">
+        <div class="inner_container">
+            
+            <div class="heading">SMILE Surgery</div>
+
+            <div class="info_boxes">
+                <div class="info_box">
+                    <div class="text">Resume cooking, TV viewing, reading immediately; wipe watering eyes with tissue (close eye first).</div>
+                </div>
+                <div class="info_box">
+                    <div class="text">Avoid dust, smoke, cosmetics; use one eye drop at a time (2-5 min gap).</div>
+                </div>
+                <div class="info_box">
+                    <div class="text">Head bath after 2 days; resume contact sports after 1 day; no protective glasses needed.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- light_green_boxes -->
+
 <div class="retina_specialist">
     <div class="container">
         <div class="inner_container">

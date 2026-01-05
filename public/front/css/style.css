@@ -2129,3 +2129,31 @@ footer .lower_sec{
     list-style-position: outside;
     margin: 0 0 0 18px;
 }
+
+/*three_points*/
+.three_points{
+	background-color: var(--purple);
+	margin: 0 0 70px;
+}
+.three_points .inner_container{
+	display: flex;
+	/*flex-wrap: wrap;*/
+	align-items: center;
+	justify-content: space-between;
+	padding: 50px 0;
+}
+.three_points .inner_container .info_box{
+	display: flex;
+	/*flex-wrap: wrap;*/
+	align-items: center;
+	/*justify-content: space-between;*/
+}
+.three_points .inner_container .info_box .icon_box img{
+	max-width: 70px;
+	filter: brightness(0) invert(1);
+}
+.three_points .inner_container .info_box .text_box{
+	font-size: 20px;
+	padding: 0 0 0 15px;
+	color: #fff;
+}

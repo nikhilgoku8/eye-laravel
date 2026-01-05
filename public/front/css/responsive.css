@@ -748,6 +748,14 @@ footer .upper_sec .inner_container .footer_box{
 }
 
 
+.three_points .inner_container{
+	flex-wrap: wrap;
+}
+.three_points .inner_container .info_box{
+	width: 100%;
+	padding: 15px 0;
+}
+
 
 
 

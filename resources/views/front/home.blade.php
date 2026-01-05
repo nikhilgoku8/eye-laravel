@@ -94,6 +94,40 @@
 </div>
 <!-- why_choose_us -->
 
+<div class="three_points">
+    <div class="container">
+        <div class="inner_container">
+            
+            <div class="info_box">
+                <div class="icon_box">
+                    <img src="{{ asset('front/images/icons/accreditation.png') }}">
+                </div>
+                <div class="text_box">
+                    NABH accredited
+                </div>
+            </div>
+            <div class="info_box">
+                <div class="icon_box">
+                    <img src="{{ asset('front/images/icons/approve.png') }}">
+                </div>
+                <div class="text_box">
+                    Empanelled with CGHS
+                </div>
+            </div>
+            <div class="info_box">
+                <div class="icon_box">
+                    <img src="{{ asset('front/images/icons/no-money.png') }}">
+                </div>
+                <div class="text_box">
+                    Cashless facility
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- three_points -->
+
 <div class="services">
     <div class="container">
         <div class="inner_container">

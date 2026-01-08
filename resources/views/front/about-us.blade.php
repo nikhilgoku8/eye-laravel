@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<!--@include('front.includes.features')-->
+<!--@@include('front.includes.features')-->
 
 <div class="our_story">
     <!-- <div class="container"> -->
@@ -117,7 +117,7 @@
                 </div>
                 <div class="info_box">
                     <div class="img_box">
-                        <img src="{{ asset('front/images/founders/dr-lakshmi-hari-bipin-kattana.png') }}">
+                        <img src="{{ asset('front/images/founders/dr-lakshmi-hari-bipin-kattana.jpeg') }}">
                     </div>
                     <div class="text_box">
                         <div class="title">Dr. Lakshmi Hari Bipin Kattana</div>

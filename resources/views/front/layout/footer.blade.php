@@ -346,7 +346,17 @@ $(document).ready(function() {
 $(document).ready(function () {
 
     $(".request_callback").on('click', function(){
-        $(".body_overlay").fadeIn();
+        // $(".body_overlay").fadeIn();
+        // location.href="http://103.42.195.28:4200/SplineTechExperian/pdux";
+        var url="http://103.42.195.28:4200/SplineTechExperian/pdux";
+
+        var newTab = window.open(url, '_blank');
+        if (newTab) {
+            newTab.focus();
+        } else {
+            // Fallback for pop-up blockers
+            alert('Please allow pop-ups for this site to open the link in a new tab.');
+        }
     });
     $(".close_overlay").on('click', function(){
         $(".body_overlay").fadeOut();

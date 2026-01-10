@@ -295,6 +295,23 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="item_box">
+                            <div class="img_box">
+                                <img src="{{ asset('front/images/team/dr-nirav-raichura.jpeg') }}">
+                            </div>
+                            <div class="text_box">
+                                <div class="team_title">Dr. Nirav Raichura</div>
+                                <div class="position">Ophthalmologist</div>
+                                <div class="description">Dr. Nirav Raichura is an Ophthalmologist specializing in Oculoplasty, Orbit, and Reconstructive Surgery. A DNB-qualified eye surgeon, he trained at Sankara Nethralaya, Chennai, and served at L.V. Prasad Eye Institute, Visakhapatnam. His expertise includes eyelid, orbital, and lacrimal disorders, ocular trauma, and aesthetic reconstruction.</div>
+                                <ul>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/instagram.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/facebook.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/twitter.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/youtube.png') }}"></a></li>
+                                    <li><a href="#"><img src="{{ asset('front/images/icons/linkedin.png') }}"></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     <?php //} ?>
                 </div>
             </div>

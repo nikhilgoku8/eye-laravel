@@ -43,7 +43,7 @@
                         <a href="mailto:contact@orbitshealth.com">contact@orbitshealth.com</a>
                         </p></li>
                         <li><p><strong>Call</strong><br>
-                        <a href="tel:098201 66630">098201 66630</a>
+                            <a href="tel:+919820166630">98201 66630</a> / <a href="tel:+918797030303">8797030303</a> / <a href="tel:+918797040404">8797040404</a>
                         </p></li>
                     </ul>
                 </div>

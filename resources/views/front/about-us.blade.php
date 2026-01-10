@@ -100,7 +100,7 @@
     <div class="container">
         <div class="inner_container">
             
-            <div class="heading center">Know about our founders</div>
+            <div class="heading center">Know about our founder</div>
 
             <div class="info_boxes">
                 <div class="info_box">

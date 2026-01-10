@@ -52,8 +52,8 @@
                                 <div class="input_box">
                                     <label>End Time</label>
                                     <div class="error form_error" id="form-error-end_time"></div>
-                                    <!-- <input type="text" name="end_time" placeholder="End Time*" class="future_timepicker" value="{{ date('Y-m-d') .' '. \Carbon\Carbon::createFromFormat('H:i:s', $result->end_time)->format('H:i') }}" readonly> -->
-                                    <input type="text" name="end_time" placeholder="End Time*" class="future_timepicker" value="{{ \Carbon\Carbon::createFromFormat('H:i:s', $result->end_time)->format('H:i') }}" readonly>
+                                    <input type="text" name="end_time" placeholder="End Time*" class="future_timepicker" value="{{ date('Y-m-d') .' '. \Carbon\Carbon::createFromFormat('H:i:s', $result->end_time)->format('H:i') }}" readonly>
+                                    <!-- <input type="text" name="end_time" placeholder="End Time*" class="future_timepicker" value="{{ \Carbon\Carbon::createFromFormat('H:i:s', $result->end_time)->format('H:i') }}" readonly> -->
                                 </div>
                             </div>
                             <div class="col-sm-12">

@@ -136,7 +136,7 @@
                                 <div class="accordion-item">
                                     <h3 class="accordion-title">What treatments are available for diabetic retinopathy?  </h3>
                                     <div class="accordion-content">
-                                        <p>Vitreoretinal surgery, laser therapy, or injections by specialists like Dr. Aniruddha Mahindrakar address complications such as retinal detachment.</p>
+                                        <p>Vitreoretinal surgery, laser therapy, or injections by specialists like Dr. Ashish K. Jain and Dr. Rutuja Tipnis address complications such as retinal detachment.</p>
                                     </div>
                                 </div>
                                 <div class="accordion-item">

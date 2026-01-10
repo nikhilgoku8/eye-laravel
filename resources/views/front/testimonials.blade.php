@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<!--@include('front.includes.features')-->
+<!--@@include('front.includes.features')-->
 
 <div class="about_hospital grey_bg">
     <div class="container">
@@ -40,7 +40,7 @@
 </div>
 <!-- about_hospital -->
 
-@include('front.includes.testimonials')
+@include('front.includes.video-testimonials')
 
 @include('front.includes.get-in-touch')
 

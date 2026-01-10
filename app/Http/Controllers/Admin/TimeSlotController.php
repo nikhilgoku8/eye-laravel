@@ -90,11 +90,11 @@ class TimeSlotController extends Controller
                 $timeSlot->update($validated);
             }
 
-            session()->flash('success', $isNew ? 'Category created successfully!' : 'Category updated successfully!');
+            session()->flash('success', $isNew ? 'Time Slot created successfully!' : 'Time Slot updated successfully!');
 
             return response()->json([
                 'status' => 'success',
-                'message' => $isNew ? 'Category created successfully!' : 'Category updated successfully!',
+                'message' => $isNew ? 'Time Slot created successfully!' : 'Time Slot updated successfully!',
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
             return response()->json([
@@ -116,7 +116,7 @@ class TimeSlotController extends Controller
     public function destroy(TimeSlot $timeSlot)
     {
         $timeSlot->delete();
-        return redirect()->route('admin.time-slots.index')->with('success', 'Category deleted!');
+        return redirect()->route('admin.time-slots.index')->with('success', 'Time Slot deleted!');
     }
 
     public function bulkDelete(Request $request)

@@ -6,8 +6,8 @@
                 <div class="left_pane">
                     <div class="title">get in touch <span class="line"></span></div>
                     <ul class="ctc_info">
-                        <li>Address : 1st floor, W, Aftab Classic, SV Rd, opp.<br> City Hospital, Raj Nagar, Gautam Nagar, Jogeshwari<br> West, Mumbai, Maharashtra 400102</li>
-                        <li>Phone: <a href="#">098201 66630</a> </li>
+                        <li>Address : 1st floor, W, Aftab Classic, SV Rd, opp.<br> City Hospital, Jogeshwari<br> West, Mumbai, Maharashtra 400102</li>
+                        <li>Phone: <a href="tel:+919820166630">98201 66630</a> / <a href="tel:+918797030303">8797030303</a> / <a href="tel:+918797040404">8797040404</a> </li>
                         <li>Email: <a href="mailto:contact@orbitshealth.com">contact@orbitshealth.com</a></li>
                     </ul>
                 </div>

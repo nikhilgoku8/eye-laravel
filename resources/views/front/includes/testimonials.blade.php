@@ -14,14 +14,14 @@
 
             <div class="testimonial_slider_wrapper">
                 <div class="testimonial_slider owl-carousel owl-theme">
-                    <?php for ($i=0; $i < 5; $i++) {  ?>
+                    <!-- @@for ($i=0; $i < 5; $i++) -->
                     <div class="item_box">
                         <div class="description">
-                            Aliqua minim qui labore tempor non culpa aliqua et culpa sint in. Dolor amet nostrud do qui laboris dolore deserunt laboris sunt adipisicing irure est eu esse. Tempor ad amet sit veniam proident officia dolore ea dolore elit enim. Dolor nisi adipisicing quis voluptate ut voluptate in nulla incididunt dolor ut in est cillum sed laboris in dolor.
+                            Dr. Nirav Raichura is an Ophthalmologist specializing in Oculoplasty, Orbit, and Reconstructive Surgery. A DNB-qualified eye surgeon, he trained at Sankara Nethralaya, Chennai, and served at L.V. Prasad Eye Institute, Visakhapatnam. His expertise includes eyelid, orbital, and lacrimal disorders, ocular trauma, and aesthetic reconstruction.
                         </div>
-                        <div class="attestant">jkab sdjasjdn</div>
+                        <!-- <div class="attestant">jkab sdjasjdn</div> -->
                     </div>
-                    <?php } ?>
+                    <!-- @@endfor -->
                 </div>
             </div>
 

@@ -15,6 +15,7 @@ use App\Models\BlogCategory;
 use Mail;
 use Carbon\Carbon;
 use App\Mail\OTPMail;
+use App\Mail\SendEmail;
 
 class HomeController extends Controller
 {
@@ -282,6 +283,23 @@ class HomeController extends Controller
             $validated['end_time'] = TimeSlot::where('id', $validated['slot_id'])->value('end_time');
 
             Appointment::create($validated);
+
+            $mailData['subject'] = 'Appointment - '.$validated['patient_name'];
+            $mailData['body'] = [
+                'Patient_name' => $validated['patient_name'],
+                'Patient_email' => $validated['patient_email'],
+                'Patient_phone' => $validated['patient_phone'],
+                'Specialization' => $validated['specialization_name'],
+                'Doctor' => $validated['doctor_name'],
+                'Start_time' => $validated['start_time'],
+                'End_time' => $validated['end_time'],
+                'Appointment_date' => $validated['appointment_date'],
+                'Patient_message' => $validated['patient_message'],
+            ];
+
+            // Send OTP email
+            // Mail::to('enquiry@orbiteyehospital.in')->send(new SendEmail($mailData));
+            Mail::to('nikhilgoku8@gmail.com')->send(new SendEmail($mailData));
 
             return response()->json([
                 'status' => 'success',

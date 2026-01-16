@@ -18,7 +18,7 @@
             <input type="text" name="patient_email" placeholder="Email">
         </div>
     </div>
-    <div class="col-sm-3">
+    <!-- <div class="col-sm-3">
         <div class="input_box">
             <div class="error form_error form-error-request_otp"></div>
             <button type="button" class="purple_hollow_btn full_width square request_otp">Request Email OTP</button>
@@ -29,7 +29,7 @@
             <div class="error form_error form-error-otp"></div>
             <input type="text" name="otp" placeholder="Email OTP" autocomplete="one-time-code">
         </div>
-    </div>
+    </div> -->
     <div class="col-sm-6">
         <div class="input_box">
             <div class="error form_error form-error-specialization_id"></div>
@@ -72,7 +72,8 @@
     <div class="col-sm-12 submit_box">
         <div class="input_box center">
             <div class="error form_error form-error-all_errors all_errors"></div>
-            <button type="submit" class="purple_filled_btn" disabled>submit</button>
+            <!-- <button type="submit" class="purple_filled_btn" disabled>submit</button> -->
+            <button type="submit" class="purple_filled_btn">submit</button>
         </div>
     </div>
     <div class="clr"></div>

@@ -252,9 +252,7 @@ class HomeController extends Controller
                 'slot_id' => 'required|exists:time_slots,id',
                 'appointment_date' => 'required|date',
                 'patient_message' => 'nullable|string',
-                'otp'=>'required|numeric|digits:6',
-                // 'doctor_remarks' => 'required|string',
-                // 'status' => 'required|string|max:20',
+                // 'otp'=>'required|numeric|digits:6',
             ];
 
             $messages = [];
@@ -266,16 +264,16 @@ class HomeController extends Controller
             // This validates and gives errors which are caught below and also stop further execution
             $validated = $validator->validated();
 
-            if(session('otp') != $request->otp){
-                $validator->getMessageBag()->add('otp', 'OTP does not match');
-                throw new \Illuminate\Validation\ValidationException($validator);
-            }elseif (session('otp_email') !== $request->patient_email) {
-                $validator->getMessageBag()->add('patient_email', 'Email must match OTP sent email');
-                throw new \Illuminate\Validation\ValidationException($validator);
-            }elseif (session('otp_expires_at') < now()) {
-                $validator->getMessageBag()->add('otp', 'OTP Expired');
-                throw new \Illuminate\Validation\ValidationException($validator);
-            }
+            // if(session('otp') != $request->otp){
+            //     $validator->getMessageBag()->add('otp', 'OTP does not match');
+            //     throw new \Illuminate\Validation\ValidationException($validator);
+            // }elseif (session('otp_email') !== $request->patient_email) {
+            //     $validator->getMessageBag()->add('patient_email', 'Email must match OTP sent email');
+            //     throw new \Illuminate\Validation\ValidationException($validator);
+            // }elseif (session('otp_expires_at') < now()) {
+            //     $validator->getMessageBag()->add('otp', 'OTP Expired');
+            //     throw new \Illuminate\Validation\ValidationException($validator);
+            // }
 
             $validated['specialization_name'] = Specialization::where('id', $validated['specialization_id'])->value('title');
             $validated['doctor_name'] = Doctor::where('id', $validated['doctor_id'])->value('name');
@@ -284,22 +282,22 @@ class HomeController extends Controller
 
             Appointment::create($validated);
 
-            $mailData['subject'] = 'Appointment - '.$validated['patient_name'];
-            $mailData['body'] = [
-                'Patient_name' => $validated['patient_name'],
-                'Patient_email' => $validated['patient_email'],
-                'Patient_phone' => $validated['patient_phone'],
-                'Specialization' => $validated['specialization_name'],
-                'Doctor' => $validated['doctor_name'],
-                'Start_time' => $validated['start_time'],
-                'End_time' => $validated['end_time'],
-                'Appointment_date' => $validated['appointment_date'],
-                'Patient_message' => $validated['patient_message'],
-            ];
+            // $mailData['subject'] = 'Appointment - '.$validated['patient_name'];
+            // $mailData['body'] = [
+            //     'Patient_name' => $validated['patient_name'],
+            //     'Patient_email' => $validated['patient_email'],
+            //     'Patient_phone' => $validated['patient_phone'],
+            //     'Specialization' => $validated['specialization_name'],
+            //     'Doctor' => $validated['doctor_name'],
+            //     'Start_time' => $validated['start_time'],
+            //     'End_time' => $validated['end_time'],
+            //     'Appointment_date' => $validated['appointment_date'],
+            //     'Patient_message' => $validated['patient_message'],
+            // ];
 
             // Send OTP email
             // Mail::to('enquiry@orbiteyehospital.in')->send(new SendEmail($mailData));
-            Mail::to('nikhilgoku8@gmail.com')->send(new SendEmail($mailData));
+            // Mail::to('nikhilgoku8@gmail.com')->send(new SendEmail($mailData));
 
             return response()->json([
                 'status' => 'success',

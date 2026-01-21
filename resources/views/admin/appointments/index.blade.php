@@ -65,8 +65,8 @@
                                 <th class="col-sm-">Doctor</th>
                                 <th class="col-sm-">Time Slot</th>
                                 <th class="col-sm-">Status</th>
-                                <!-- <th class="col-sm-">Created</th>
-                                <th class="col-sm-">Updated</th> -->
+                                <th class="col-sm-">Created</th>
+                                <!-- <th class="col-sm-">Updated</th> -->
                                 <th class="col-sm- center">ACTION</th>
                             </tr>
                             @if(!empty($result) && count($result) > 0)
@@ -80,12 +80,12 @@
                                         <td>{{ $row->doctor->name ?? $row->doctor_name }}</td>
                                         <td>{{ $row->timeSlot->start_time ?? $row->start_time }} - {{ $row->timeSlot->end_time ?? $row->end_time }}</td>
                                         <td>{{ strtoupper($row->status) }}</td>
-                                        <!-- <td>
+                                        <td>
                                             @if(!empty($row->created_at))
                                                 {{ date('d-M-Y H:i:s', strtotime($row->created_at)) }}
                                             @endif
                                         </td>                                
-                                        <td>
+                                        <!-- <td>
                                             @if(!empty($row->updated_at))
                                                 {{ date('d-M-Y H:i:s', strtotime($row->updated_at)) }}
                                             @endif

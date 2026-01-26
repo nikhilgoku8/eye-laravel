@@ -93,17 +93,17 @@
                                         <td class="center">
                                             <a href="{{ route('admin.appointments.edit', $row->id) }}" class="edit_details">Edit</a>
                                             <!-- <br> -->
-                                            <!-- <span class="checkbox">
+                                            <span class="checkbox">
                                                 <input name="dataID" class="styled" type="checkbox" value="{{ $row->id }}">
                                                 <label for="checkbox1"></label>
-                                            </span> -->
+                                            </span>
                                             
                                         </td>
                                     </tr>
                                 @endforeach
                             @else
                                 <tr>
-                                    <td colspan="9" class="no_records"> No records </td>
+                                    <td colspan="11" class="no_records"> No records </td>
                                 </tr>
                             @endif
                         </tbody>
@@ -118,6 +118,40 @@
         </div>
         <!-- fourth_row end -->
     </div>
-    <!-- /.row --> 
+    <!-- /.row -->  
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+  $("#delete_records").on('click',(function(e){
+    e.preventDefault();
+
+    var dataID = [];
+    $.each($("input[name='dataID']:checked"), function(){            
+        dataID.push($(this).val());
+    });
+
+    if(dataID.length == 0){
+        alert('No records are selected');
+    }else{
+        if (confirm('Are you sure you want to delete these?')) {
+            $.ajax({
+                type: "POST",
+                url: "{{ route('admin.appointments.bulk-delete') }}",
+                data: {"_token":"{{ csrf_token() }}", "dataID":dataID},
+                dataType: 'json',
+                success: function(response) {
+                    window.location.reload(true);
+                }
+            });
+        }
+    }
+    
+    
+
+  }));
+
+});
+</script>
 
 @endsection            

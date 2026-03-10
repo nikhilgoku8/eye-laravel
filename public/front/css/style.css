@@ -388,6 +388,9 @@ header .inner_container{
 .column_2{
 	columns: 2;
 }
+.light{
+	font-weight: 300;
+}
 
 /*why_choose_us*/
 .why_choose_us{
@@ -943,6 +946,36 @@ footer .lower_sec{
 .services_page .hero .text_overlay .inner_container .purple_hollow_btn{
 	pointer-events: auto;
 }
+.services_page .service_boxes{
+	padding: 5vw 0 0 0;
+}
+.services_page .service_boxes .service_box{
+	padding: 0 0 5vw 0;
+}
+.services_page .service_boxes .service_box .heading{
+	margin: 0;
+}
+.services_page .service_boxes .service_box .heading::before{
+	display: none;
+}
+.services_page .service_boxes .service_box .heading::after{
+	display: none;
+}
+.services_page .service_boxes .service_box .img_box{
+	padding: 0 50px;
+}
+.services_page .service_boxes .service_box .text_box{
+	padding: 150px 50px 50px 50px;
+	margin: -100px 0 0 0;
+	background-color: #fff;
+	border-radius: 25px;
+	border: 1px solid var(--light-green);
+	transition: all 0.3s;
+}
+.services_page .service_boxes .service_box:hover .text_box{
+	background-color: var(--light-green);
+}
+
 .eye_examination{
 	padding: 60px 0;
 }
@@ -959,12 +992,13 @@ footer .lower_sec{
 .eye_examination .six_boxes{
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
 	padding: 30px 0 40px;
+	margin: 0 -12.5px;
 }
 .eye_examination .six_boxes .info_box{
-	width: calc(33.33% - 15px);
-	margin: 0 0 25px;
+	width: calc(33.33% - 25px);
+    margin: 0 12.5px 25px;
 	display: flex;
 	flex-direction: column;
 }
@@ -1338,6 +1372,17 @@ footer .lower_sec{
 	border: 2px solid var(--purple);
 	padding: 10px 25px;
 }
+.txt_overlay_image_wrapper .info_boxes .info_box .text_overlay .inner_box .btn_wrapper button{
+	transition: all 0.3s;
+	font-size: 0px;
+	border: 2px solid transparent;
+	padding: 0;
+}
+.txt_overlay_image_wrapper .info_boxes .info_box:hover .text_overlay .inner_box .btn_wrapper button{
+	font-size: 16px;
+	border: 2px solid var(--purple);
+	padding: 10px 25px;
+}
 
 /*eye_diseases_page*/
 .eye_diseases_page .retina_specialist .panes_wrapper .right_pane .three_boxes .info_box{
@@ -1644,7 +1689,7 @@ footer .lower_sec{
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 999;
+    z-index: 99999999;
     display: none;
 }
 .body_overlay .inner_box{

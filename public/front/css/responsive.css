@@ -746,9 +746,19 @@ footer .upper_sec .inner_container .footer_box{
 	padding: 50% 0 0 0;
 	margin: 0 0 10px;
 }
-
-
-
+.services_page .service_boxes{
+	padding: 10vw 0 0 0;
+}
+.services_page .service_boxes .service_box{
+	padding: 0 0 10vw;
+}
+.services_page .service_boxes .service_box .img_box{
+	padding: 0;
+}
+.services_page .service_boxes .service_box .text_box{
+	padding: 15px 0 0 0;
+	margin: 0;
+}
 
 
 

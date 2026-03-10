@@ -11,9 +11,9 @@
     <div class="text_overlay">
         <div class="inner_container">
             <div class="banner_heading">
-                <span>Our</span>
+                <span>Your eyes</span>
                 <br>
-                <span class="bold">Process</span>
+                <span class="bold">We care</span>
             </div>
             <div class="banner_title">Mumbai’s Premier Eye Care Center Since 2006</div>
             <div class="banner_btns">
@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<!--@include('front.includes.features')-->
+@include('front.includes.features')
 
 <div class="about_hospital grey_bg">
     <div class="container">
@@ -107,8 +107,15 @@
                         </div>
                         <div class="description">
                             <ul>
-                                <li>We accept major insurance providers and will assist with claims.</li>
-                                <li>Detailed billing statements provided for transparency.</li>
+                                {{-- <li>We accept major insurance providers and will assist with claims.</li>
+                                <li>Detailed billing statements provided for transparency.</li> --}}
+                                <li>Use prescribed eye drops regularly.</li>
+                                <li>Do not rub or press the operated eye.</li>
+                                <li>Keep the eye clean and dry; avoid water entering the eye.</li>
+                                <li>Wear the protective glasses as advised.</li>
+                                <li>Avoid dust, smoke, and polluted areas.</li>
+                                <li>Mild redness or watering is normal.</li>
+                                <li>Attend all follow-up appointments.</li>
                             </ul>
                         </div>
                     </div>

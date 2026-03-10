@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<!--@include('front.includes.features')-->
+@include('front.includes.features')
 
 <div class="txt_overlay_image_wrapper">
     <div class="container">
@@ -66,7 +66,7 @@
                                 <p><b>Treatment:</b> Eye drops, laser, surgery</p>
                             </div>
                             <div class="btn_wrapper">
-                                <a href="#" class="purple_hollow_btn">Book an appointment</a>
+                                <button class="purple_hollow_btn request_callback">Book an appointment</button>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                                 <p><b>Treatment:</b>  Laser photocoagulation, intravitreal injections, vitrectomy</p>
                             </div>
                             <div class="btn_wrapper">
-                                <a href="#" class="purple_hollow_btn">Book an appointment</a>
+                                <button class="purple_hollow_btn request_callback">Book an appointment</button>
                             </div>
                         </div>
                     </div>
@@ -224,7 +224,7 @@
                 </div>
                 <div class="info_box">
                     <div class="img_box">
-                        <img src="{{ asset('front/images/diseases/el-90-excimer-laser-for-lasik-prk-and-refractive-corrections.png') }}">
+                        <img src="{{ asset('front/images/diseases/schwind-amaris-500e-excimer-laser-for-lasik-prk-and-refractive-corrections.png') }}">
                     </div>
                     <div class="text_box">SCHWIND AMARIS 500e Excimer Laser for LASIK, PRK, and refractive corrections</div>
                 </div>
@@ -238,7 +238,7 @@
                     <div class="img_box">
                         <img src="{{ asset('front/images/diseases/advanced-vitrectomy-machines-for-retinal-surgeries.png') }}">
                     </div>
-                    <div class="text_box">Lumera I microscope and Zeiss Callisto for image guided surgery</div>
+                    <div class="text_box">Advanced vitrectomy machines for retinal surgeries</div>
                 </div>
                 <div class="info_box">
                     <div class="img_box">
@@ -251,6 +251,18 @@
                         <img src="{{ asset('front/images/diseases/yag-laser-system-for-posterior-capsulotomy.png') }}">
                     </div>
                     <div class="text_box">YAG Laser system for posterior capsulotomy</div>
+                </div>
+                <div class="info_box">
+                    <div class="img_box">
+                        <img src="{{ asset('front/images/diseases/advanced-vitrectomy-machines-for-retinal-surgeries.png') }}">
+                    </div>
+                    <div class="text_box">Lumera I microscope and Zeiss Callisto for image guided surgery</div>
+                </div>
+                <div class="info_box">
+                    <div class="img_box">
+                        <img src="{{ asset('front/images/diseases/zeiss-callisto-for-image-guided-surgery.png') }}">
+                    </div>
+                    <div class="text_box">Zeiss Callisto for image guided surgery</div>
                 </div>
             </div>
 

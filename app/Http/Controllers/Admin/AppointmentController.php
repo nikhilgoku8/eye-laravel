@@ -67,12 +67,4 @@ class AppointmentController extends Controller
             ], 500);
         }
     }
-
-    public function bulkDelete(Request $request)
-    {
-
-        Appointment::destroy($request->dataID);
-
-        return response()->json(['success' => true, 'message' => 'Record Deleted']);
-    }
 }

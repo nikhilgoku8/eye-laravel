@@ -87,7 +87,6 @@ Route::prefix('ewm')->as('admin.')->group(function () {
         Route::get('/appointments/past', [AppointmentController::class, 'past'] )->name('appointments.past');
         Route::get('/appointments/edit/{id}', [AppointmentController::class, 'edit'] )->name('appointments.edit');
         Route::post('/appointments/update/{id}', [AppointmentController::class, 'update'] )->name('appointments.update');
-        Route::post('/appointments/bulk-delete', [AppointmentController::class, 'bulkDelete'])->name('appointments.bulk-delete');
 
         Route::get('/change-password', [AdminController::class, 'change_password'] )->name('change-password');
         Route::post('/changePasswordFunction', [AdminController::class, 'changePasswordFunction'] )->name('changePasswordFunction');

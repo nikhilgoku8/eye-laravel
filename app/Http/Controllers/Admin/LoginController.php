@@ -15,15 +15,17 @@ class LoginController extends Controller
         return view('admin/dashboard');
     }
 
-    public function register(){
-        $data = array(
-            'fname' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('password'),
-            'role' => 'superadmin'
-        );
-        Admin::create($data);
-    }
+    // public function register(){
+    //     $data = array(
+    //         'fname' => 'Admin',
+    //         // 'email' => 'admin@gmail.com',
+    //         // 'password' => Hash::make('password'),
+    //         'email' => 'admin@orbiteyehospital.in',
+    //         'password' => Hash::make('fvdKh9Wj6XP5'),
+    //         'role' => 'superadmin'
+    //     );
+    //     Admin::create($data);
+    // }
 
     public function login(){
         return view('admin/login');

@@ -254,7 +254,7 @@
                 </div>
                 <div class="info_box">
                     <div class="img_box">
-                        <img src="{{ asset('front/images/diseases/advanced-vitrectomy-machines-for-retinal-surgeries.png') }}">
+                        <img src="{{ asset('front/images/diseases/lumera-i-microscope-and-zeiss-callisto-for-image-guided-surgery.png') }}">
                     </div>
                     <div class="text_box">Lumera I microscope and Zeiss Callisto for image guided surgery</div>
                 </div>
